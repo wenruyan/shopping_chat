@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<login bindcancel="cancelLogin" bindconfirm="getUserInfoSuccess" show-login="{{showLoginPanel}}"></login>
+<!-- 
+<navbar can-back="{{true}}" font-color="{{'#333333'}}" bg-op="{{1}}" title="积分兑换" border="{{false}}"></navbar> -->
+<view class="container {{isPhone ? 'iphoneX-height' : ''}}">
+
+  <view class='wrap' style="margin-top: {{marginTop}}rpx;">
+
+    <view class="content">
+      <view class='history f-l'>最新上线</view>
+      <view class="imgWrap">
+        <image class="redeembg" src="../../images/redeembg.png" bindtap='goChange'></image>
+        <image class="logotitle" src='../../images/logo.png'></image>
+
+        <text class="titlebig">步步抽</text>
+        <text class="titlefr">100步=1积分</text>
+      </view>
+    </view>
+
+    <view class="content">
+      <view class='history f-l'>敬请期待</view>
+
+    </view>
+    <view class="contentMsg">
+      <image class="wartImg" src="../../images/soccer-task.jpeg"></image>
+    </view>
+  </view>
+
+</view>
+<view class='confirm-tips' wx:if="{{returnConfirm}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content'>兑换成功，赶紧去逛逛吧</view>
+
+    <button class="btnnav blue-blue" data-btn="sure" bindtap="endChange">我知道了</button>
+  </view>
+</view>
+<view class='confirm-tips' wx:if="{{Exchange}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content' wx:if="{{step>=1}}">当前可导入{{step}}积分<view>（兑换比例 100步=1积分）</view></view>
+    <view class='text-content' wx:else>当前步数不足无法兑换
+     </view>
+     <image class="cancletitle" src='../../images/cancle.png' bindtap="noSure"></image>
+    <button class="btnnav blue-blue" data-btn="sure" bindtap="goSure"  wx:if="{{step>=1}}">立即兑换</button>
+      <button class="btnnav blue-blue" data-btn="sure"  bindtap="noSure"  wx:else >我知道了</button>
+  </view>
+ 
+</view>

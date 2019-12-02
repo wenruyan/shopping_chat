@@ -1,0 +1,99 @@
+/**index.wxss**/
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+}
+
+.no-record {
+  text-align: center;
+}
+
+.no-record .no-record-img {
+  width: 414rpx;
+  height: 298rpx;
+  margin: 0 auto 80rpx;
+  padding-top: 185rpx;
+}
+
+.no-record .no-record-text {
+  font-weight: bold;
+  font-size: 34rpx;
+  color: #666;
+}
+
+.no-record .btn {
+  font-size: 36rpx;
+  color: #fff;
+  margin-top: 37rpx;
+  width: 333rpx;
+}
+
+.record-list {
+  padding-top: 58rpx;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.wrap {
+  height: 100%;
+}
+
+.month-item {
+  width: 710rpx;
+  padding-left: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.month-item .month {
+  overflow: hidden;
+  padding-bottom: 30rpx;
+}
+.month-item .month .icon-date {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 19rpx;
+  float: left;
+  margin-top: 6rpx;
+}
+.month-item .month .month-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #222222;
+  float: left;
+}
+
+.month-item .record-detail {
+  padding: 28rpx 0 30rpx;
+  overflow: hidden;
+  border-bottom: 2rpx solid #F4F4F4;
+}
+.month-item .record-detail .name {
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.month-item .record-detail .time {
+  font-size: 24rpx;
+  color: #666666;
+}
+.month-item .record-detail .right {
+  padding-right: 40rpx;
+}
+.month-item .record-detail .change-value {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.month-item .record-detail .change-add {
+  color: #FF790D;
+}
+
+.month-item .record-detail .change-reduce {
+  color: #0D80FF;
+}

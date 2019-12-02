@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "流量",
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar",
+    "tabbar": "../../components/tabbar/tabbar"
+  }
+}

@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="收货地址"></navbar> -->
+  <view class="radio-group" style="margin-top: {{marginTop}}rpx;">
+    <view class='list'>
+      <view class='list-item' wx:if="{{userAdress.length==0}}">
+        <view wx:if="{{noData}}">
+          <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+          <view class='no-record-text'>正在加载</view>
+        </view>
+        <view wx:else>
+
+          <view class='no-record-text'>当前地址列表为空</view>
+        </view>
+      </view>
+      <view class='list-item' wx:for="{{userAdress}}">
+
+        <view class="content f-l " bindtap="{{fromeMine?' ':'goBack'}}" data-id="{{item.id}}">
+          <view class="name f-l">{{item.name}}</view>
+          <view class="phone f-l">{{item.phone}}</view>
+          <view class="defaultY f-l" wx:if="{{item.isDefault==10}}">
+            <image class="defaulta" src='../../images/defaulY.png'></image>
+          </view>
+          <view class="address">{{item.province}} {{item.city}} {{item.area}} {{item.addressdetail}}</view>
+        </view>
+        <view class="detailsWrap" wx:if="{{fromeMine}}">
+          <!-- <view class=" f-l radioCheck" bindtap="radioChange" data-id="{{item.id}}" data- isDefault='{{item.isDefault}}' data-isdefault="{{item.isDefault}}" wx:if="{{!fromeMine}}">
+            <image src="../../images/checking.png" class="chexkAdress" wx:if="{{showAdress==item.id}}" data-index='{{index}}'></image>
+
+            <image src="../../images/beforCheck.png" data-index='{{index}}' class="chexkAdress" wx:else></image>
+            <text class="defaultAd">设为默认地址</text>
+          </view> -->
+          <view class=" f-l radioCheck" bindtap="radioChange" data-id="{{item.id}}" data- isDefault='{{item.isDefault}}' data-isdefault="{{item.isDefault}}">
+            <image src="../../images/checking.png" class="chexkAdress" wx:if="{{showAdress==item.id}}" data-index='{{index}}'></image>
+
+            <image src="../../images/beforCheck.png" data-index='{{index}}' class="chexkAdress" wx:else></image>
+            <text class="defaultAd">设为默认地址</text>
+          </view>
+          <view class="edit f-r" data-page="address" data-id="{{item.id}}" bindtap='changeAddress'>编辑</view>
+          <image class="again f-r" src="../../images/again.png" bindtap='changeAddress'></image>
+          <view class="edit f-r" data-index='{{index}}' bindtap='deletEadress' data-page="address" data-id="{{item.id}}">删除</view>
+          <image class="again f-r" data-index='{{index}}' bindtap='deletEadress' data-id="{{item.id}}" src='../../images/delete.png'></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <button class="btn btn-save blue-blue addbtn" hover-class="btn-active" bindtap='toPage' data-page="address">新增收货地址</button>
+  </view>
+</view>
+<view class='confirm-tips' wx:if="{{userAdress.length==0 && !fromeMine}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content'>您的收货地址为空，是否添加新的 收货地址
+    </view>
+
+    <button class="btnnav blue-blue" data-btn="sure" bindtap="goEstablish">我知道了</button>
+  </view>
+
+</view>

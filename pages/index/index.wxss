@@ -1,0 +1,683 @@
+@import '../../css/runnerKeyframes.wxss';
+/* @import '../../font/stylesheet.wxss'; */
+/**index.wxss**/
+
+page {
+  height: auto;
+}
+
+.container {
+  /* background-color: #336884; *//* height: 100%; */
+  background-color: #fff;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+  padding-bottom: 98rpx;
+}
+
+.container.iphoneX-height {
+  padding-bottom: 158rpx;
+}
+
+.wrap {
+  width: 100%;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 390rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .bg {
+  width: 100%;
+  height: 315rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.banner .soccer {
+  width: 100rpx;
+  height: 138rpx;
+  top: 51rpx;
+  left: 49rpx;
+  position: absolute;
+}
+
+.timepoint {
+  color: #ff2b44;
+  width: 14rpx;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.soccer .interD {
+  width: 192rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(50, 90, 246, 1);
+  background: rgba(251, 235, 25, 1);
+  border-radius: 21px;
+  text-align: center;
+}
+
+.banner .flex_input {
+  width: 532rpx;
+  /* height: 80rpx;
+  line-height: 80rpx; */
+  overflow: hidden;
+  position: absolute;
+  top: 258rpx;
+  left: 111rpx;
+  box-sizing: border-box;
+  padding: 20rpx 0 20rpx 44rpx;
+  z-index: 20;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 13px 0px rgba(55, 93, 244, 0.06);
+  border-radius: 50px;
+}
+
+.banner .input-wrap {
+  width: 670rpx;
+  /* height: 80rpx;
+  line-height: 80rpx; */
+  overflow: hidden;
+  position: absolute;
+  top: 268rpx;
+  left: 40rpx;
+  box-sizing: border-box;
+  padding: 20rpx 0 20rpx 44rpx;
+  z-index: 20;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 13px 0px rgba(55, 93, 244, 0.06);
+  border-radius: 50px;
+}
+.banner .input-wrap .search-icon, .banner .input-wrap input {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+ .input-wrap2 {
+  width: 690rpx;
+  /* height: 80rpx;
+  line-height: 80rpx; */
+  overflow: hidden;
+ height:72rpx;
+  box-sizing: border-box;
+  padding: 20rpx 0 20rpx 44rpx;
+  z-index: 20;
+background:rgba(247,247,247,1);
+  /* box-shadow: 0px 6px 13px 0px rgba(55, 93, 244, 0.06); */
+  border-radius: 50px;
+}
+.banner .input-wrap .search-icon {
+  margin-top: -2rpx;
+}
+
+.banner .input-wrap input {
+  font-size: 28rpx;
+  margin-left: 29rpx;
+  width: 350rpx;
+  color: #3b6eff;
+}
+ .input-wrap2 input {
+  font-size: 28rpx;
+  margin-left: 29rpx;
+  width: 350rpx;
+  line-height:32rpx;
+  height:32rpx;
+  min-height: 32rpx;  
+
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:#999999;
+}
+.banner .banner-pic {
+  display: block;
+  width: 710rpx;
+  height: 357rpx;
+  position: absolute;
+  bottom: 0;
+  left: 20rpx;
+  border-radius: 20rpx;
+}
+
+.sort {
+  overflow: hidden;
+  padding-left: 38rpx;
+}
+
+.sort .sort-item {
+  text-align: center;
+  width: 94rpx;
+  padding-top: 50rpx;
+  margin-right: 99rpx;
+}
+
+.sort .sort-item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.sort .sort-item image {
+  width: 94rpx;
+  height: 94rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.sort .sort-item view {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 23rpx;
+  font-weight: bold;
+}
+
+.recommend {
+  overflow: hidden;
+  height: 160rpx;
+  margin-top: 25rpx;
+  margin-bottom: 35rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+.recommend2 {
+  overflow: hidden;
+  height: 50rpx;
+  /* text-align: center; */
+  line-height: 50rpx;
+  /* margin-top: 50rpx; */
+  margin-bottom: 48rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-top:50rpx;
+}
+
+.recommend2 image {
+  width: 10rpx;
+  height: 34rpx;
+  background: rgba(60, 152, 255, 1);
+  border-radius: 5rpx;
+  margin-top: 8rpx;
+}
+
+.contentW {
+  width: 160rpx;
+  text-align: center;
+}
+
+.content_one {
+  height: 94rpx;
+  width: 94rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.imgDesc {
+  width: 106rpx;
+  height: 25rpx;
+  font-size: 26rpx;
+  line-height: 25rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  margin: 16rpx auto;
+}
+
+.recommend2 .text {
+  font-size: 38rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 91rpx;
+  margin-left: 22rpx;
+  margin-right: 22rpx;
+}
+
+.recommend .text2 {
+  font-size: 22rpx;
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.recommend .icon-right {
+  width: 12rpx;
+  height: 20rpx;
+  padding-top: 15rpx;
+}
+
+.integral {
+  height: 96rpx;
+  font-size: 110rpx;
+  font-family: 'DIN Pro Cond';
+  font-weight: Condensed Bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.guide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.guide .guide-4 {
+  width: 246rpx;
+  height: 95rpx;
+  position: absolute;
+  bottom: 281rpx;
+  left: 444rpx;
+}
+
+.guide .guide-4.iphoneX-height {
+  bottom: 341rpx;
+}
+
+.guide .guide-5 {
+  width: 430rpx;
+  height: 212rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -215rpx;
+}
+
+.guide .guide-5.iphoneX-height {
+  bottom: 60rpx;
+}
+
+.qiandao {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.signIn {
+  position: fixed;
+  top: 65rpx;
+  left: 20rpx;
+  z-index: 100;
+}
+
+.signF {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 14rpx;
+}
+
+.confirm-tips {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  text-align: center;
+}
+
+.confirm-tips .bg {
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.confirm-tips .content {
+  width: 591rpx;
+  height: 623rpx;
+  border-radius: 25rpx;
+  margin: 316rpx auto 125rpx;
+  position: relative;
+  color: #333;
+  text-align: center;
+}
+
+.confirm-tips .content .text-title {
+  font-size: 46rpx;
+  padding: 66rpx 0 50rpx;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.confirm-tips .content .text-content {
+  font-size: 30rpx;
+  padding: 0 38rpx;
+  line-height: 1.8;
+  white-space: normal;
+  word-break: break-all;
+  text-align: center;
+  color: #f12711;
+}
+
+.confirm-tips .content .btn {
+  width: 378rpx;
+  margin-top: 65rpx;
+}
+
+.confirm-tips .close image {
+  width: 62rpx;
+  height: 62rpx;
+}
+
+.contentImg {
+  height: 220rpx;
+}
+
+.imageSign {
+  height: 185rpx;
+  width: 260rpx;
+}
+
+.imgWrap {
+  width: 710rpx;
+  /* height: 460rpx; */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.scroll-x {
+  display: inline-block;
+  margin-right: 18rpx;
+  position: relative;
+}
+
+.scroll-x:last-child {
+  margin-right: 0;
+}
+
+.infoimg {
+  width: 310rpx;
+  height: 310rpx;
+}
+
+.describe3 {
+  width: 310rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 28rpx;
+  white-space:normal;
+  max-height:77rpx;
+}
+
+.timeBuy .scroll-x {
+  margin: 0 18rpx 0 0;
+}
+.timeBuy .infoimg {
+  width: 204rpx;
+  height: 196rpx;
+}
+
+.timeBuy .describe3 {
+  width: 204rpx;
+}
+.newLi {
+  width: 70rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  background: rgba(255, 43, 68, 1);
+  border-radius: 13rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  display: inline-block;
+}
+
+.iconjifen {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 4rpx;
+}
+
+.fixedImg {
+  position: fixed;
+  right: 40rpx;
+  bottom: 200rpx;
+  z-index: 100;
+}
+
+.totop {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.buyjifen {
+  font-size: 26rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(255, 43, 68, 1);
+  margin-top:-5rpx;
+}
+
+.textbtn {
+  width: 130rpx;
+  height: 39rpx;
+  line-height: 39rpx;
+  background: rgba(235, 235, 235, 1);
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(55, 93, 244, 1);
+  text-align: center;
+  margin-top: 8rpx;
+}
+
+.time {
+  display: block;
+  width: 35rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin-top: 7rpx;
+  background: rgba(255, 43, 68, 1);
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.success_one {
+  width: 591rpx;
+  height: 623rpx;
+  position: fixed;
+  top: 215rpx;
+  left: 83rpx;
+  z-index: 10;
+}
+
+.success_two {
+  width: 591rpx;
+  height: 623rpx;
+  position: fixed;
+  top: 232rpx;
+  left: 70rpx;
+  animation: myMove1 5s ease-in infinite alternate;
+  -webkit-animation: myMove1 5s ease-in infinite alternate;
+}
+
+@keyframes myMove1 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes myMove1 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.righticon {
+  width: 7rpx;
+  height: 12rpx;
+  margin-top: 14rpx;
+  margin-right: 20rpx;
+}
+
+.flex_banner {
+  position: fixed;
+  top: 120rpx;
+  width: 750rpx;
+  height: 100rpx;
+  z-index: 999;
+  background: #fff;
+}
+
+.flex_banner .flex_input {
+  margin: 10rpx auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0rpx 0 20rpx 44rpx;
+  z-index: 20;
+  box-shadow: 0px 6px 13px 0px rgba(55, 93, 244, 0.06);
+  width: 670rpx;
+  height: 72rpx;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 36rpx;
+}
+
+.flex_input .icon {
+  margin-top: -2rpx;
+}
+
+.flex_input input {
+  font-size: 28rpx;
+  margin-left: 29rpx;
+  line-height: 72rpx;
+  color: #3b6eff;
+  height: 72rpx;
+}
+
+.noShow {
+  display: none;
+}
+
+.cancleS {
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+  text-decoration: line-through;
+}
+
+.titleImg {
+  position: absolute;
+  top: 0;
+  left: 6rpx;
+  width: 82rpx;
+  height: 76rpx;
+}
+
+.enjoybg {
+  width: 596rpx;
+  height: 519rpx;
+  z-index: 10;
+  position: fixed;
+  top: 300rpx;
+  left: 83rpx;
+}
+
+.addf {
+  width: 102rpx;
+  height: 57rpx;
+  z-index: 100;
+  position: fixed;
+  top: 593rpx;
+  left: 313rpx;
+}
+
+.addjf {
+  font-size: 32rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  z-index: 100;
+  position: fixed;
+  top: 600rpx;
+  left: 430rpx;
+  display: block;
+}
+
+.goEnjoy {
+  position: fixed;
+  top: 678rpx;
+  left: 166rpx;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #333;
+  z-index: 100;
+  width: 422rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.closeIcon {
+  width: 42rpx;
+  height: 42rpx;
+  z-index: 100;
+  position: fixed;
+  top: 297rpx;
+  left: 592rpx;
+  display: block;
+}
+.miaoshu{
+  font-size:20rpx;
+}
+.phcolor{
+  color:#3b6eff;
+}
+.phcolor2{
+ color:rgba(153,153,153,1);
+}
+.topFixed{
+  position: fixed;
+  top:0;
+  left:0;
+  height:100rpx;
+  background:rgba(255,255,255,1);
+  z-index: 999;
+  width:100%;
+  line-height:100rpx;
+  padding-top:14rpx;
+  padding-left:30rpx;
+}

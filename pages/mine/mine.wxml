@@ -1,0 +1,110 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar can-back="{{false}}" font-color="{{'#333333'}}" bg-op="{{1}}" title="我的"></navbar> -->
+  <scroll-view scroll-y class='wrap'>
+    <image src='../../images/my_top_bg.png' class="my_bg"></image>
+    <view class="otherInfo">
+
+      <view class="userinfo">
+        <image class="userinfo-avatar f-l" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname f-l">HI, {{userInfo.nickName}}</text>
+        <text class="userinfo-nickname2 f-l" bindtap='goAccountBalance'>积分：{{baseData.integralBalance||0}}</text>
+      </view>
+
+    </view>
+    <view class='order'>
+
+      <view class="order-wrap">
+        <view class="item all f-l" bindtap="toPage" data-activeSelect="1" data-type="0">
+          <view class="itemWrap">
+            <image class="icon" src="../../images/order-all.png"></image>
+            <!-- <view class="tip" wx:if="{{allOrder!=0}}">{{allOrder||0}}</view> -->
+            <view class="text">全部</view>
+          </view>
+        </view>
+        <view class="item no-ship f-l" bindtap="toPage" data-activeSelect="2" data-type="20">
+          <view class="itemWrap">
+            <image class="icon" src="../../images/order-noShip.png"></image>
+            <view class="tip" wx:if="{{baseData.unshipped!=0}}">{{baseData.unshipped}}</view>
+            <view class="text">待发货</view>
+          </view>
+        </view>
+        <view class="item shipped f-l" bindtap="toPage" data-activeSelect="3" data-type="30">
+          <view class="itemWrap">
+            <image class="icon" src="../../images/order-shipped.png"></image>
+            <view class="tip" wx:if="{{baseData.shipped!=0}}">{{baseData.shipped}}</view>
+            <view class="text">已发货</view>
+          </view>
+        </view>
+
+        <view class="item complete f-l" bindtap="toPage" data-page="myOrder" data-activeSelect="4" data-type="50">
+         <view class="itemWrap">
+          <image class="icon" src="../../images/order-complete.png"></image>
+          <!-- <view class="tip" wx:if="{{endOrder!=0}}">{{ endOrder}}</view> -->
+          <view class="text">已完成</view>
+           </view>
+        </view>
+        <!-- <view class="item shipped f-l" bindtap="toPage"  data-activeSelect="5" data-type="">
+          <image class="icon" src="../../images/order-sorry.png"></image>
+          <view class="tip" wx:if="{{tuiOrder!=0}}">{{tuiOrder}}</view>
+          <view class="text">已退货</view>
+        </view> -->
+      </view>
+    </view>
+    <view class="bannerWrap"  >
+      <button class="bannerimg btnImgWrap"  open-type="share">
+         <image src="../../images/banner.png" class="bannerimg btnImg"></image>
+      </button>
+   
+    </view>
+    <view class='menu'>
+      <view class="title">常用功能</view>
+      <view class='menu-item' bindtap='goMycard'>我的卡券
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image>
+      </view>
+      <view class='menu-item' bindtap='goAccountBalance'>积分记录
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image>
+      </view>
+      <view class='menu-item' bindtap='goCollections'>我的收藏
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image>
+      </view>
+      <view class='menu-item' bindtap='goAddress'>收货地址
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image>
+      </view>
+      <view class='menu-item' bindtap="aboutUs">关于我们
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image>
+      </view>
+      <button class='menu-item2 notButton' open-type="contact">联系我们
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon2"></image>
+      </button>
+      <!-- <view class='menu-item' bindtap='goSafe'>安全设置<image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image></view> -->
+    </view>
+    <!-- <view class="tec">赞积分提供技术支持</view> -->
+    <!-- <button open-type='getUserInfo' type="primary" bindgetuserinfo="getUserInfo">123</button> -->
+  </scroll-view>
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+  <view catchtouchmove='stopMove' class="confirm-tips" wx:if="{{tipsConfirm}}">
+    <view class="bg"></view>
+    <view class="content">
+      <view class="text-title">提示</view>
+      <scroll-view class="content-wrap" scroll-y="" style="height: 64px;">
+        <view class="text-content" style="text-align:center;">您可以联系在线客服</view>
+      </scroll-view>
+      <button bindtap='callUs' class="btn blue-blue" data-btn="sure" open-type="contact" hover-class="btn-active">在线客服</button>
+    </view>
+    <view class='close'>
+      <image src='../../images/icon-close.png' bindtap='hideTipsConfirm'></image>
+    </view>
+  </view>
+  <view class='confirm-tips' wx:if="{{returnConfirm2}}" catchtouchmove="stopMove">
+    <view class='bg'></view>
+    <view class='content'>
+      <image src="../../images/icon-close.png" class="closeIcon" bindtap='canclebg'></image>
+      <image class="addf" src='../../images/addf.png'></image>
+      <text class="addjf">积分</text>
+      <view class="goEnjoy">继续分享今日最高可获15积分</view>
+      <image class="enjoybg" src='../../images/enjoybg.png'></image>
+      <image class="success_two" src='../../images/success_two.png'></image>
+    </view>
+  </view>
+</view>

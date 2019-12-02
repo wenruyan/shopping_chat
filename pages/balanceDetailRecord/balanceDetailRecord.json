@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "账户明细",
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar"
+  }
+}

@@ -1,0 +1,216 @@
+@import '../../css/runnerKeyframes.wxss';
+
+/**index.wxss**/
+
+page {
+  height: auto;
+}
+
+.container {
+  /* background-color: #336884; *//* height: 100%; */
+  background-color: #fff;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+  padding-bottom: 98rpx;
+}
+
+.container.iphoneX-height {
+  padding-bottom: 158rpx;
+}
+
+.wrap {
+  width: 100%;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 200rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .bg {
+  width: 100%;
+  height: 423rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.banner .soccer {
+  width: 150rpx;
+  height: 138rpx;
+  top: 51rpx;
+  left: 49rpx;
+  position: absolute;
+}
+
+.soccer .interD {
+  width: 192rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(50, 90, 246, 1);
+  background: rgba(251, 235, 25, 1);
+  border-radius: 21px;
+  text-align: center;
+}
+
+.banner .soccer image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .input-wrap {
+  width: 595rpx;
+  height: 80rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 40rpx;
+  left: 40rpx;
+  box-sizing: border-box;
+  padding-left: 44rpx;
+  z-index: 20;
+  background: rgba(247, 247, 247, 1);
+  /* box-shadow:0px 6px 13px 0px rgba(55,93,244,0.06); */
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.banner .input-wrap .icon {
+  margin-top: -2rpx;
+}
+
+.banner .input-wrap input {
+  font-size: 28rpx;
+  margin-left: 29rpx;
+  width: 400rpx;
+  color: #3b6eff;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.btnCancle {
+  height: 80rpx;
+  line-height: 80rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: #333;
+  font-weight: Medium;
+}
+
+.content {
+  padding: 10rpx 40rpx;
+  height: 38rpx;
+  font-size: 40rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom:30rpx;
+}
+
+.clearall {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(60, 152, 255, 1);
+  font-weight: Medium;
+}
+
+.contentMsg {
+  max-height: 283rpx;
+  overflow: hidden;
+  width: 670rpx;
+  padding: 10rpx 40rpx;
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.historyitem {
+  max-width: 360rpx;
+    flex-shrink: 0;
+  padding: 4rpx 15rpx;
+  margin: 10rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background: rgba(246, 246, 246, 1);
+  border-radius: 4rpx;
+  min-width: 160rpx;
+}
+
+.container_two {
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  position: fixed;
+  top: 178rpx;
+  left: 0;
+  right: 0;
+  min-height: 900rpx;
+}
+
+.menu {
+  padding-left: 40rpx;
+  padding-top: 10rpx;
+}
+
+.menu .menu-item.notButton {
+  text-align: left;
+  padding: 0;
+  padding-left: 33rpx;
+  background-color: #fff;
+}
+
+.menu .menu-item {
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 710rpx;
+  position: relative;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 400;
+  padding-left: 33rpx;
+  box-sizing: border-box;
+}
+
+.menu .menu-item::after {
+  content: '';
+  width: 710rpx;
+  height: 2rpx;
+  background-color: #f4f4f4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* .menu .menu-item:last-child::after {
+  height: 0;
+} */
+
+.menu .menu-item .right-icon {
+  position: absolute;
+  top: 38rpx;
+  right: 42rpx;
+  width: 16rpx;
+  height: 16rpx;
+}
+.moonlink{
+  height:90rpx;
+  line-height:90rpx;
+  max-width:610rpx;
+  overflow: hidden;
+  display: block;
+}

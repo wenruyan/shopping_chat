@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "安全设置",
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar"
+  }
+}

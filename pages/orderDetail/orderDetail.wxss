@@ -1,0 +1,212 @@
+/**index.wxss**/
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+}
+.content-wrap {
+  height: 100%;
+  width: 750rpx;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F9F9F9;
+}
+.express-module {
+  height: 200rpx;
+  width: 100%;
+  overflow: hidden;
+  position: relative; 
+}
+.express-module .status {
+  font-size: 30rpx;
+  color: #ffffff;
+  margin-top: 62rpx;
+  margin-left: 92rpx;
+  font-weight: bold;
+}
+.express-module .status-detail {
+  font-size: 24rpx;
+  color: #ffffff;
+  margin-top: 15rpx;
+  margin-left: 92rpx;
+  max-width: 400rpx;
+}
+.address-module {
+  width: 100%;
+  /* height: 214rpx; */
+  background-color: #ffffff;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.address-module .express {
+  height: 217rpx;
+  line-height: 217rpx;
+  /* font-size: 36rpx;
+  color: #333333;
+  font-weight: bold; */
+  border-bottom: 2rpx solid #F4F4F4;
+  padding-top:40rpx;
+}
+.address-module .info {
+  overflow: hidden;
+  padding-top: 15rpx;
+  padding-bottom: 25rpx;
+}
+.address-module .info .person-info {
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #333333;
+  height:90rpx;
+  line-height:90rpx;
+}
+.address-module .info .person-info .name, .address-module .info .person-info .phone {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-weight: bold;
+}
+.address-module .info .address-info {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 1.5;
+  font-weight: bold;
+  overflow: hidden;
+}
+.commodity-module {
+  width: 750rpx;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  padding-bottom: 105rpx;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+.commodity-module .mall-name {
+  height: 114rpx;
+  line-height: 114rpx;
+  text-align: left;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.commodity-module .commodity-info {
+  width: 100%;
+  padding-bottom: 28rpx;
+  border-bottom: 2rpx solid #F4F4F4; 
+  overflow: hidden;
+}
+.commodity-module .commodity-info .pic {
+  width: 228rpx;
+  height: 215rpx;
+  border: 1rpx solid #EEEEEE;
+}
+.commodity-module .commodity-info .desc-wrap {
+  width: 460rpx;
+  box-sizing: border-box;
+  padding-top: 34rpx;
+  padding-right: 40rpx;
+  position: relative;
+  height: 215rpx;
+}
+.commodity-module .commodity-info .desc-wrap .desc {
+  font-size: 26rpx;
+  color: #333333;
+  line-height: 1.5;
+  max-height: 120rpx;
+  overflow: hidden;
+}
+
+.selectNumber {
+  position: absolute;
+  bottom: 0;
+  right: 40rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.commodity-module .other-info {
+  overflow: hidden;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.commodity-module .other-info .row-wrap {
+  overflow: hidden;
+}
+.commodity-module .other-info .key, .commodity-module .other-info .value {
+  height: 65rpx;
+  line-height: 65rpx;
+  width: 50%;
+  font-size: 26rpx;
+  color: #999999;
+  /* font-weight: bold; */
+}
+.commodity-module .other-info .value {
+  text-align: right;
+}
+.commodity-module .other-info .row-wrap.price .key {
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.commodity-module .other-info .row-wrap.price .value {
+  color: #F0250F;
+  font-size: 28rpx;
+}
+.img-wrap{
+  position: absolute;
+  width:180rpx;
+  height:180rpx;
+  top:10px;
+  right:48rpx;
+}
+.img-wrap image{
+  width:100%;
+  height:100%;
+}
+.message-detail{
+  margin-top:20rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  width:628rpx;
+  line-height:46rpx;
+  height:76rpx;
+  margin:0 auto;
+  color:RGBA(13, 128, 255, 1);
+  font-size: 30rpx;
+}
+.time-wrap{
+  margin-top:26rpx;
+  width:308rpx;
+  height:20rpx;
+  line-height: 26rpx;
+  font-size:26rpx;
+  font-style: bold;
+  margin-left:20rpx;
+  color:RGBA(153, 153, 153, 1);
+}
+.icon-wrap{
+  width:22rpx;
+  height:20rpx;
+
+  margin-right:20rpx;
+
+}
+.icon{
+  width:100%;
+  height:100%;
+}
+.iconf{
+  width:22rpx;
+  height:20rpx;
+  float:left;
+  margin-top:10rpx;
+
+}
+.margin-l30{
+  margin-left:30rpx;
+}
+.margin-l{
+ margin-left:40rpx;
+
+}

@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">手机号</view>
+  <view class='input-wrap'>
+    <input value="{{inputPhoneValue}}" bindinput="bindPhoneInput" placeholder="请输入手机号码" type='number' maxlength='11'/>
+  </view>
+  <view class='btn-wrap'>
+    <button class="btn btn-save blue-blue" hover-class="btn-active" bindtap='submitInfo'>获取验证码</button>
+  </view>
+</view>

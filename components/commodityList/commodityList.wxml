@@ -1,0 +1,24 @@
+<!--components/login/login.wxml-->
+
+<view class='list'>
+  <view class="list-item {{index%2 == 0 ? 'f-l' : 'f-r'}}" wx:for="{{listData}}" bindtap="goDetail" data-id="{{item.id}}">
+    <image class="pic" src="{{item.url}}"></image>
+    <view class="commodity">
+      <!-- <view class="pay-type">{{(item.priceList.data.length>2)?"积分+现金":"多方式"}}</view> -->
+      <view class="name">{{item.itemtitle}}</view>
+    </view>
+    <view class="price-wrap">
+      <view class="old f-r">{{item.count}}人付款</view>
+      <block wx:for="{{item.priceList.data}}" wx:for-item="towitem">
+
+        <view class="price f-l" wx:if="{{(towitem.paymenttype == 1030||towitem.paymenttype == 0) && item.quantity > 0}}">
+          <image class="iconjifen f-l" src="../../images/jifenicon.png" wx:if="{{(towitem.paymenttype == 1030||towitem.paymenttype == 0)}}"></image>{{towitem.points}}<text class="specileSize"> 积分</text></view>
+        <view class="price f-l" wx:if="{{towitem.paymenttype == 10 && item.quantity > 0}}">
+          <image wx:if="{{towitem.paymenttype == 10}}" class="iconjifen f-l" src="../../images/jifenicon.png"></image>{{towitem.points}}<text class="specileSize"> 积分</text>+￥{{towitem.cash}}</view>
+      </block>
+      <view class="noStock f-l" wx:if="{{item.quantity <= 0}}">
+        缺货状态
+      </view>
+    </view>
+  </view>
+</view>

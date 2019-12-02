@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "流量明细",
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar"
+  }
+}

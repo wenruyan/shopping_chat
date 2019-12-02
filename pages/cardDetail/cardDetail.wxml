@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="info">
+    <view class="title">
+      <image class="" src="{{baseData.url}}"></image>
+      <view>{{baseData.mainTitle}}</view>
+    </view>
+    <view class="body">
+      <view class="tip">兑换码</view>
+      <view class="code">{{code}}</view>
+      <view class="copy" bindtap="copyCode">复制</view>
+    </view>
+    <view class="foot">
+      <text class="tip">到期日</text>
+      <text class="date">{{baseData.validtime}}</text>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="detail-item" wx:for="{{content}}">
+      <image class="pic" mode="widthFix" src="{{item.url}}" wx:if="{{item.type==20}}"></image>
+      <view class="" wx:else>{{item.text}}</view>
+    </view>
+  </view>
+</view>

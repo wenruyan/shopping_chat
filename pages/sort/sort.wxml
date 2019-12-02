@@ -1,0 +1,179 @@
+<!--index.wxml-->
+<login bindcancel="cancelLogin" bindconfirm="getUserInfoSuccess" show-login="{{showLoginPanel}}"></login>
+<!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="商城" border="{{false}}" style="z-index:1000"></navbar> -->
+<view class="container">
+  <view class='wrap' style="margin-top: {{marginTop||0}}rpx;">
+    <view class="banner">
+      <view class="soccer f-r">
+        <image wx:if='{{singoRow}}' src="../../images/searchafter.png" bindtap='changeSignl'></image>
+        <image wx:else src="../../images/doublerow.png" bindtap='changeSignl'></image>
+      </view>
+      <view class="input-wrap f-l">
+        <i-icon class="f-l" style="margin-top:-4rpx"  type="search" size="22" color="#999999"></i-icon>
+        <!-- <input class="f-l" type="text" disabled  placeholder="{{placeholder}}" value="{{inputVal}}" bindinput="inputTyping" bindconfirm="search"></input> -->
+        <input class="f-l" bindtap='toSearch' type="text" disabled placeholder="{{placeholder}}"></input>
+      </view>
+      <view class="clear"></view>
+      <view class="scroll_box select-bar">
+        <view class='item {{activeSelect == 1 ? "active" : ""}}'>
+          <text data-type="1" bindtap='changeSelect' style="display:inline-block;width:100%;height:100%">{{defaultVal}}</text>
+          <view class='line marginLeft'></view>
+          <image wx:if="{{activeSelect == 1}}" class="down" src="./../../images/sort-icon.png"></image>
+
+        </view>
+        <view class='item  {{activeSelect == 2 ? "active" : ""}}' data-type="2" bindtap='changeSelect'>
+          积分筛选
+          <view class='line marginLeft'></view>
+          <image class="down" wx:if="{{activeSelect == 2}}" bindtap='showDisplay' src="./../../images/sort-icon.png"></image>
+        </view>
+      </view>
+      <!-- <scroll-view scroll-x class="imgWrap contentTwo" >
+        <view bindtap='changeType' class="scroll-x {{typeIndex==index?'redFont':''}}" wx:for='{{goodsTypeList}}' data-index='{{index}}' data-cid="{{item.cid}}">
+          {{item.name}}
+        </view>
+      </scroll-view> -->
+    </view>
+    <scroll-view scroll-y >
+      <view class="titpShow" wx:if="{{kong}}">
+        <view class="textB">
+          <image class="nogoods" src="../../images/nogoods.png"></image>
+          <view class="nodescribe">没找到相关商品，换换筛选条件再试试</view>
+        </view>
+        <commodity-list binddraw="goMallCommodityDetail" listData="{{listData2}}"></commodity-list>
+      </view>
+      <view wx:if='{{singoRow}}'>
+        <commodity-list wx:if="{{listData.lenght}}" binddraw="goMallCommodityDetail" listData="{{listData}}"></commodity-list>
+        <commodity-list wx:else binddraw="goMallCommodityDetail" listData="{{listData}}"></commodity-list>
+      </view>
+      <view wx:else>
+        <view class="scroll">
+          <scroll-view class='scroll' scroll-y bindscrolltolower="getOrderList">
+            <!-- <view class='no-record' wx:if="{{listData.length == 0}}">
+              <view wx:if="{{!noData}}">
+                <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+                <view class='no-record-text'>正在加载</view>
+              </view>
+              <view wx:else>
+                <image class='no-record-img' src='../../images/no-money-record.png'></image>
+                <view class='no-record-text'>暂无记录</view>
+              </view>
+            </view> -->
+            <view class='list'>
+              <view class='list-detail' style="{{item.txtStyle}}" wx:for="{{listData}}" bindtap='goMallCommodityDetail2' data-goodsId="{{item.id}}" data-index="{{index}}">
+                <view data-goodsId="{{item.id}}">
+                  <view class='left f-l'>
+                    <image class="pic" mode="aspectFit" src="{{item.url}}"></image>
+                  </view>
+                  <view class='right f-l'>
+                    <view class="name">{{item.itemtitle}}</view>
+                  </view>
+                  <view class="noteP f-l">
+                    <view class="howmany f-r">{{item.count}}人付款</view>
+                    <block wx:for="{{item.priceList.data}}" wx:for-item="towitem">
+                      <image class="titleicon f-l " src='../../images/jifenicon.png' wx:if="{{towitem.paymenttype == 1030 && item.quantity > 0}}"></image>
+                      <view class="prices " wx:if="{{towitem.paymenttype == 1030 && item.quantity > 0}}">{{towitem.points}}积分</view>
+                      <image class="titleicon f-l" src='../../images/jifenicon.png' wx:if="{{towitem.paymenttype == 10 && item.quantity > 0}}"></image>
+                      <view class="prices" wx:if="{{towitem.paymenttype == 10 && item.quantity > 0}}">{{towitem.points}}积分+￥{{towitem.cash}}</view>
+                      <view class="noStock f-l" wx:if="{{item.quantity <= 0}}">
+                        缺货状态
+                      </view>
+                    </block>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+            <view class='loading-data' wx:if="{{list.page < list.totalPage}}">正在加载中……</view>
+          </scroll-view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view wx:if="{{showDisplay}}">
+  <view class="container3 " wx:if="{{marginTop}}" style="top: {{marginTop||0}}rpx;z-index:100">
+
+    <view class='wrap2'>
+      <view class="banner2">
+        <view class="soccer2 f-r">
+          <image wx:if='{{singoRow}}' src="../../images/searchafter.png" bindtap='changeSignl'></image>
+          <image wx:else src="../../images/doublerow.png" bindtap='changeSignl'></image>
+        </view>
+        <view class="input-wrap2 f-l">
+          <i-icon class="f-l"  style="margin-top:-4rpx" type="search" size="22" color="#999999" ></i-icon>
+          <!-- <input class="f-l" type="text" disabled  placeholder="{{placeholder}}" value="{{inputVal}}" bindinput="inputTyping" bindconfirm="search"></input> -->
+          <input class="f-l" bindtap='toSearch' type="text" disabled placeholder="{{placeholder}}"></input>
+        </view>
+        <view class="clear2"></view>
+        <view class="scroll_box2 select-bar2">
+          <view class='item2 {{activeSelect == 1 ? "active2" : ""}}'>
+            <text style="display:inlineblock;width:100%;height:100%" data-type="1" bindtap='changeSelect'>{{defaultVal}}</text>
+            <view class='line2 marginLeft2'></view>
+            <image wx:if="{{activeSelect == 1}}" class="down2" src="./../../images/sort-icon.png"></image>
+
+          </view>
+          <view class='item2  {{activeSelect == 2 ? "active2" : ""}}' data-type="2" bindtap='changeSelect'>
+            积分筛选
+            <view class='line2 marginLeft2'></view>
+            <image wx:if="{{activeSelect == 2}}" class="down2" src="./../../images/sort-icon.png"></image>
+          </view>
+        </view>
+        <view class='menu' wx:if="{{activeSelect==1}}">
+          <view class='menu-item {{indexActive == "默认排序" ? "active2" : ""}}' bindtap='choiceIndex' data-sorting="" data-value="默认排序">默认排序</view>
+          <view class='menu-item {{indexActive == "积分降序" ? "active2" : ""}}' bindtap='choiceIndex' data-sorting="desc" data-value="积分降序">积分降序</view>
+          <view class='menu-item {{indexActive == "积分升序" ? "active2" : ""}}' bindtap='choiceIndex' data-sorting="asc" data-value="积分升序">积分升序</view>
+        </view>
+        <view class='wrapContent' wx:else>
+
+          <button class="btnjifen f-l {{actionIndex==index?'actionIndex':''}}" wx:if="{{index==0}}" data-lowlimit="" data-highlimit="" wx:for='{{accountArray}}' data-index="{{index}}" bindtap='jifenChoice'>{{item}}积分</button>
+          <button class="btnjifen f-l {{actionIndex==index?'actionIndex':''}}" wx:if="{{index!=0&&index!=4}}" data-lowlimit="{{(index-1)*500+1}}" data-highlimit="{{index*500}}" wx:for='{{accountArray}}' data-index="{{index}}" bindtap='jifenChoice'>{{item}}积分</button>
+          <button class="btnjifen f-l {{actionIndex==index?'actionIndex':''}}" wx:if="{{index==4}}" data-lowlimit="1001" data-highlimit="2000" wx:for='{{accountArray}}' data-index="{{index}}" bindtap='jifenChoice'>{{item}}积分</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="container2 " wx:else style="z-index:100">
+    <view class='wrap2' style="margin-top: {{marginTop||0}}rpx; ">
+      <view class="banner2">
+        <view class="soccer2 f-r">
+          <image wx:if='{{singoRow}}' src="../../images/searchafter.png" bindtap='changeSignl'></image>
+          <image wx:else src="../../images/doublerow.png" bindtap='changeSignl'></image>
+        </view>
+        <view class="input-wrap2 f-l">
+          <i-icon class="f-l" style="margin-top:-4rpx" type="search" size="22" color="#999999"></i-icon>
+          <!-- <input class="f-l" type="text" disabled  placeholder="{{placeholder}}" value="{{inputVal}}" bindinput="inputTyping" bindconfirm="search"></input> -->
+          <input bindtap='toSearch' class="f-l" type="text" disabled placeholder="{{placeholder}}"></input>
+        </view>
+        <view class="clear2"></view>
+        <view class="scroll_box2 select-bar2">
+          <view class='item2 {{activeSelect == 1 ? "active2" : ""}}'>
+            <text style="display:inlineblock;width:100%;height:100%" data-type="1" bindtap='changeSelect'>{{defaultVal}}</text>
+            <view class='line2 marginLeft2'></view>
+            <image wx:if="{{activeSelect == 1}}" class="down2" src="./../../images/sort-icon.png"></image>
+
+          </view>
+          <view class='item2  {{activeSelect == 2 ? "active2" : ""}}' data-type="2" bindtap='changeSelect'>
+            积分筛选
+            <view class='line2 marginLeft2'></view>
+            <image wx:if="{{activeSelect == 2}}" class="down2" src="./../../images/sort-icon.png"></image>
+          </view>
+        </view>
+        <view class='menu' wx:if="{{activeSelect==1}}">
+          <view class='menu-item {{indexActive == "默认排序" ? "active2" : ""}}' bindtap='choiceIndex' data-sorting="" data-value="默认排序">默认排序</view>
+          <view class='menu-item {{indexActive == "积分降序" ? "active2" : ""}}' bindtap='choiceIndex' data-sorting="desc" data-value="积分降序">积分降序</view>
+          <view class='menu-item {{indexActive == "积分升序" ? "active2" : ""}}' bindtap='choiceIndex' data-sorting="asc" data-value="积分升序">积分升序</view>
+        </view>
+        <view class='wrapContent' wx:else>
+
+          <button class="btnjifen f-l {{actionIndex==index?'actionIndex':''}}" wx:if="{{index==0}}" data-lowlimit="" data-highlimit="" wx:for='{{accountArray}}' data-index="{{index}}" bindtap='jifenChoice'>{{item}}积分</button>
+          <button class="btnjifen f-l {{actionIndex==index?'actionIndex':''}}" wx:if="{{index!=0&&index!=4}}" data-lowlimit="{{(index-1)*500+1}}" data-highlimit="{{index*500}}" wx:for='{{accountArray}}' data-index="{{index}}" bindtap='jifenChoice'>{{item}}积分</button>
+          <button class="btnjifen f-l {{actionIndex==index?'actionIndex':''}}" wx:if="{{index==4}}" data-lowlimit="1501" data-highlimit="999999999" wx:for='{{accountArray}}' data-index="{{index}}" bindtap='jifenChoice'>{{item}}积分</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 排序 -->
+<view class="confirm-tips" wx:if="{{tipsConfirm}}" bindtap='closebg'>
+  <view class="bg"></view>
+</view>

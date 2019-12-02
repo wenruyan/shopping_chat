@@ -1,0 +1,7 @@
+<!--components/navbar.wxml-->
+<view class='navbar' style="{{border ? '' : 'border-bottom: none;'}}">
+  <view class="top" style="width: 100%;height: {{statusBarHeight + 'px'}};opacity: {{bgOp}};background-color: {{bgColor}}"></view>
+  <view class='bg' style="opacity: {{bgOp}};background-color: {{bgColor}}"></view>
+  <image class='icon-back' style="top: {{statusBarHeight + 'px'}};" bindtap="goBack" src='../../images/back-black.png' wx:if="{{canBack}}"></image>
+  <view class='page-title'  style="top: {{statusBarHeight + 'px'}};color: {{fontColor}}">{{title}}</view>
+</view>

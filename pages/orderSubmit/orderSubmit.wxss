@@ -1,0 +1,453 @@
+/**index.wxss**/
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+}
+.content-wrap {
+  height: 100%;
+  width: 750rpx;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F9F9F9;
+}
+.margin-top{
+  margin-top:18rpx;
+}
+.icon-wrap{
+  width:22rpx;
+  height:20rpx;
+
+  margin-right:20rpx;
+
+}
+.text-content text{
+  color:#FF2B44;
+}
+.btnn{
+  width:414rpx;
+height:90rpx;
+background:rgba(65,137,255,1);
+border-radius:10rpx;
+margin-top:52rpx;
+}
+.icon {
+width:100%;
+height:100%;
+
+}
+.icon2{
+width:100%;
+height:100%;
+margin-top:32rpx;
+}
+
+.address-module {
+  width: 100%;
+  height: 200rpx;
+  background-color: #ffffff;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.address-module .add {
+  height: 200rpx;
+  line-height: 200rpx;
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: bold;
+  margin-left:20rpx
+}
+.address-module .info {
+  overflow: hidden;
+  padding-top: 15rpx;
+}
+.address-module .info .person-info {
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #333333;
+}
+.address-module .info .person-info .name, .address-module .info .person-info .phone {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-weight: bold;
+}
+.address-module .info .address-info {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 1.5;
+  font-weight: bold;
+  width:620rpx;
+  overflow:hidden;
+height:88rpx;
+
+}
+.margin-l{
+  width:580rpx;
+margin-left:32rpx;
+
+}
+.commodity-module {
+  width: 750rpx;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+.commodity-module .mall-name {
+  height: 114rpx;
+  line-height: 114rpx;
+  text-align: left;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.commodity-module .commodity-info {
+  width: 100%;
+  padding-bottom: 28rpx;
+  border-bottom: 2rpx solid #F4F4F4; 
+  overflow: hidden;
+}
+.commodity-module .commodity-info .pic {
+  width: 228rpx;
+  height: 215rpx;
+  border: 1rpx solid #EEEEEE;
+}
+.commodity-module .commodity-info .desc-wrap {
+  width: 460rpx;
+  box-sizing: border-box;
+  padding-top: 4rpx;
+  padding-right: 40rpx;
+  position: relative;
+  height: 215rpx;
+}
+.commodity-module .commodity-info .desc-wrap .desc {
+  font-size: 26rpx;
+  color: #333333;
+  height: 72rpx;
+  overflow: hidden;
+}
+.commodity-module .commodity-info .desc-wrap .attr {
+  font-size: 22rpx;
+  color: #999999;
+  height:70rpx;
+  overflow:hidden;
+}
+.selectNumber {
+  position: absolute;
+  bottom: 0;
+  right: 40rpx;
+}
+.commodity-module .express {
+  overflow: hidden;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.commodity-module .express .key, .commodity-module .express .value {
+  height: 87rpx;
+  line-height: 87rpx;
+  width: 50%;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.commodity-module .express .value {
+  font-weight: normal;
+  text-align: right;
+}
+.pay-module {
+  width: 100%;
+  padding: 0 40rpx 75rpx;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.pay-module .title-wrap {
+  overflow: hidden;
+}
+.pay-module .title-wrap .title {
+  font-size: 36rpx;
+  color: #333333;
+  height: 114rpx;
+  line-height: 114rpx;
+  font-weight: bold;
+}
+.pay-module .title-wrap .noMailFee {
+  color: #666;
+  font-size: 22rpx;
+  padding-top: 46rpx;
+}
+.pay-module .title-wrap .mysoccer {
+  font-size: 28rpx;
+  color: #333333;
+  height: 114rpx;
+  line-height: 114rpx;
+}
+.pay-module .pay-type {
+  overflow: hidden;
+}
+.pay-module .pay-type .item {
+  position: relative;
+  width: 320rpx;
+  height: 216rpx;
+  background-color: #F8F8F8;
+  text-align: center;
+  margin-right: 30rpx;
+  box-sizing: border-box;
+}
+.pay-module .pay-type .item.checked {
+  border: 4rpx solid #FF7B33;
+}
+.pay-module .pay-type .item:nth-child(2n) {
+  margin-right: 0;
+}
+.pay-module .pay-type .item .name {
+  padding-top: 70rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.pay-module .pay-type .item .need-pay {
+  font-size: 24rpx;
+  color: #FF7B33;
+  margin-top: 10rpx;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  z-index: 2;
+  overflow: hidden;
+  background-color: #ffffff;
+  /* border-top: 1rpx solid #E8E6E6; */
+}
+
+.bottom.iphoneX-height {
+  padding-bottom: 60rpx;
+}
+
+.bottom .total {
+  width: 450rpx;
+  height: 100%;
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  text-align: left;
+  font-weight: bold;
+  overflow: hidden;
+}
+.bottom .total .key {
+
+}
+.bottom .total .value {
+  color:#F0250F;
+  margin-left:20rpx;
+  width:270rpx;
+  overflow:hiddenn;
+
+
+}
+.bottom .buy {
+  width: 280rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-top: 6rpx;
+}
+
+.bottom .buy view{
+  width: 280rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  background-color: #FF2B44;
+  border-radius: 10rpx;
+}
+.noAddress {
+  display: flex;
+  align-items: center;
+}
+.addicon{
+  height: 44rpx;
+  width: 44rpx;
+  line-height: 44rpx;
+  margin-top: -4rpx;
+}
+.mortgageWrap{
+  margin-top:240rpx;
+}
+.mortgageWrap .mortgage{
+  font-size: 28rpx;
+  font-weight: bold;
+  color:#333333
+}
+.mortgageWrap .mortgageNum{
+  font-size: 28rpx;
+  color:#333333;
+}
+.radioOne{
+  height:22rpx;
+  width:22rpx;
+  position:relative;
+  padding:23rpx 23rpx 0;
+}
+.radioOne2{
+  height:22rpx;
+  width:22rpx;
+  border:1px solid #EEEEEE;
+  position: absolute;
+  top: 23rpx;
+  border-radius:50%;
+}
+.radioActive{
+  background:#FF7B33;
+}
+/* 提示框 */
+.confirm-tips {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  text-align: center;
+}
+.confirm-tips .bg {
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: -1;
+}
+.confirm-tips .content {
+  width: 580rpx;
+  padding-bottom: 74rpx; 
+  background-color: #FFFFFF;
+  border-radius: 25rpx;
+  margin: 316rpx auto 125rpx;
+  position: relative;
+  color: #333333;
+  text-align: center;
+  overflow: hidden;
+}
+
+.confirm-tips .content .text-title {
+  font-size: 46rpx;
+  padding: 66rpx 0 50rpx;
+  line-height: 1;
+  font-weight: bold;
+}
+.confirm-tips .content .text-content {
+  font-size: 30rpx;
+  padding: 0 38rpx;
+  line-height: 1.8;
+  text-align: left;
+  white-space:normal;
+  word-break:break-all;
+}
+.confirm-tips .content .btn {
+  width: 378rpx;
+  height:100rpx;
+  line-height:100rpx;
+  margin-top: 65rpx;
+}
+
+.confirm-tips .close image{
+  width: 62rpx;
+  height: 62rpx;
+  z-index: 100,
+}
+.iptbox{ 
+ width: 80rpx; 
+ height: 80rpx; 
+ border:1rpx solid #ddd; 
+ border-radius: 20rpx; 
+ display: flex; 
+ justify-content: center; 
+ align-items: center; 
+ text-align: center; 
+} 
+.ipt{ 
+ width: 0; 
+ height: 0; 
+} 
+.inputWrap{
+  display: flex
+}
+.contents{ 
+ display: flex; 
+ justify-content: space-around; 
+ align-items: center; 
+} 
+.okpay{
+  position:absolute;
+bottom:0rpx;
+right:0rpx;
+width:40rpx;
+height:40rpx;
+
+}
+.rightLogo{
+width:21rpx;
+height:21rpx;
+position:relative;
+right:-650rpx;
+top:-95rpx;
+
+}
+
+.soccer-account {
+  width: 670rpx;
+  background-color: #fff;
+  height: calc(100% - 688rpx);
+  position: relative;
+  padding: 20rpx 40rpx 0;
+  
+}
+
+.soccer-account::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 20rpx;
+  background-color: #F9F9F9;
+  top: 0;
+  left: 0;
+}
+
+.soccer-account .title {
+  height: 105rpx;
+  line-height: 105rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.soccer-account .content {
+  padding-top: 30rpx;
+  font-size: 28rpx;
+}
+
+.soccer-account .content view:first-child {
+  font-weight: bold;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "绑定手机号",
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar",
+    "tabbar": "../../components/tabbar/tabbar"
+  }
+}

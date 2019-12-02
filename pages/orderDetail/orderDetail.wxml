@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="订单详情"  bgurl="pages/orderDetail/orderDetail"></navbar> -->
+  <view class="content-wrap" style="margin-top: {{marginTop}}rpx;">
+    <view class="express-module org-org" wx:if="{{orderStatus==70}}">
+      <view class="status">退货中</view>
+      <view class="status-detail">我们会尽快安排发货 ></view>
+      <view class="img-wrap">
+        <image src="../../images/tuihuozhong.png"></image>
+      </view>
+    </view>
+   
+     <view class="express-module org-org" wx:elif="{{orderStatus==80}}">
+      <view class="status">已退货</view>
+      <view class="status-detail">快件已被揽收 ></view>
+      <view class="img-wrap">
+        <image src="../../images/yituihuo.png"></image>
+      </view>
+    </view>
+    <view class="express-module org-org" wx:elif="{{orderStatus==30}}">
+      <view class="status">正在发货</view>
+      <view class="status-detail">您的订单正在发货</view>
+      <view class="img-wrap">
+        <image src="../../images/zhengzai.png"></image>
+      </view>
+    </view>
+     <view class="express-module org-org" wx:elif="{{orderStatus==20}}">
+      <view class="status">等待发货</view>
+      <view class="status-detail">我们将尽快为你发货</view>
+      <view class="img-wrap">
+        <image src="../../images/dengdai.png"></image>
+      </view>
+    </view>
+   
+    <view class="address-module">
+      <!-- <view class="express">
+        
+          <image src="../../images/che.png" class="iconf"></image>
+       
+        <view class="message-detail margin-l30">快件已经被北京朝阳人民揽收，一个工作日内尅定会进行运输的，不要着急耐心等待</view>
+        <view class="time-wrap margin-l30">2018-10-01 12:00:00</view>
+      </view> -->
+      <view class="info" wx:if="{{notVirtual}}">
+        <view class="person-info">
+          <view class="f-l icon-wrap">
+           <image src="../../images/ren.png" class="icon"></image>
+          </view>
+          <view class="name f-l">收件人 {{gitName}}</view>
+          <view class="phone f-r">{{gitPhone}}</view>
+        </view>
+        <view class="address-info">
+          <view class="f-l icon-wrap">
+            <image src="../../images/dizhi.png" class="icon"></image>
+          </view>
+          <view class=" margin-l">收货地址  {{addressDetail}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="commodity-module">
+      <view class="mall-name">攒积分商城</view>
+      <view class="commodity-info">
+        <image class="pic f-l" src="{{imgUrl}}" mode="aspectFit"></image>
+        <view class="desc-wrap f-r">
+          <view class="desc">{{mainTitle}}</view>
+          <view class="selectNumber">x {{quantity}}</view>
+        </view>
+      </view>
+      <view class="other-info">
+        <view class="row-wrap">
+          <view class="key f-l">订单编号</view>
+          <view class="value f-r">{{id}}</view>
+        </view>
+        <view class="row-wrap">
+          <view class="key f-l">商品价格</view>
+          <view class="value f-r">{{integral}}积分</view>
+        </view>
+        <view class="row-wrap">
+          <view class="key f-l">运费</view>
+          <view class="value f-r">￥0.00</view>
+        </view>
+        <view class="row-wrap price">
+          <view class="key f-l">实付</view>
+          <view class="value f-r">{{integral}}积分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

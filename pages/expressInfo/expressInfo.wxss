@@ -1,0 +1,136 @@
+/**index.wxss**/
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  padding-top: 128rpx;
+}
+.overview {
+  overflow: hidden;
+  padding: 40rpx 40rpx 0;
+}
+.overview .main-pic {
+  width: 180rpx;
+  height: 149rpx;
+  border: 1rpx solid #EEEEEE;
+  margin-right: 35rpx;
+}
+.overview .info {
+  width: 450rpx;
+  font-size: 26rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.overview .info view {
+  line-height: 1.5;
+  margin-bottom: 15rpx;
+}
+.overview .info view text {
+  font-weight: normal;
+}
+.overview .info .status text {
+  color: #FF790D;
+}
+.map {
+  margin-top: 23rpx;
+  width: 750rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.map image {
+  width: 100%;
+  height: 157rpx;
+}
+.map view {
+  position: absolute;
+  top: 40rpx;
+  font-size: 36rpx;
+  color: #333333;
+  text-align: center;
+  font-weight: bold;
+}
+.map .from {
+  left: 40rpx;
+  width: 120rpx;
+}
+.map .to {
+  right: 40rpx;
+  width: 140rpx;
+}
+.detail {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 75rpx 40rpx 0;
+  width: 100%;
+}
+.clear {
+  clear: both;
+}
+.detail .item {
+  width: 100%;
+  height: 80rpx;
+  position: relative;
+  margin-bottom: 55rpx;
+  opacity: 0.6;
+}
+.detail .item::after {
+  content: '';
+  width: 1rpx;
+  height: 95rpx;
+  background-color: #E7E7E7;
+  position: absolute;
+  left: 210rpx;
+  bottom: -75rpx;
+}
+.detail .item:first-child {
+  opacity: 1;
+}
+.detail .item:last-child {
+  margin-bottom: 0;
+}
+.detail .item:last-child::after {
+  width: 0;
+}
+.detail .item .time-wrap{
+  width: 190rpx;
+  text-align: center;
+}
+.detail .item .time-wrap .time {
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.detail .item .time-wrap .date {
+  height: 35rpx;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  color: #333333;
+}
+.detail .item .icon {
+  height: 100%;
+  width: 40rpx;
+}
+.detail .item .icon image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-top: 20rpx;
+}
+.detail .item .message {
+  height: 80rpx;
+  font-size: 26rpx;
+  color: #333333;
+  font-weight: bold;
+  width: 410rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  display: table;
+}
+.detail .item .message view {
+  display: table-cell;
+  vertical-align: middle;
+}

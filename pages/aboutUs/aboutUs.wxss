@@ -1,0 +1,32 @@
+@import '../../css/runnerKeyframes.wxss';
+
+/**index.wxss**/
+
+page {
+  height: auto;
+  height: 100%;
+}
+
+.container {
+  /* background-color: #336884; *//* height: 100%; */
+  background-color: #CDDEF8;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+  padding-bottom: 98rpx;
+}
+
+.container.iphoneX-height {
+  padding-bottom: 158rpx;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.aboutLogo {
+  width: 100%;
+  height: 100%;
+}

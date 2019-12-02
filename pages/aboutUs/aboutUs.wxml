@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<login bindcancel="cancelLogin" bindconfirm="getUserInfoSuccess" show-login="{{showLoginPanel}}"></login>
+<!-- 
+<navbar can-back="{{false}}" font-color="{{'#333333'}}" bg-op="{{1}}" title="积分兑换" border="{{false}}"></navbar> -->
+<view class="container {{isPhone ? 'iphoneX-height' : ''}}">
+  <view class='wrap' style="margin-top: {{marginTop}}rpx;">
+    <image class="aboutLogo" src="../../images/about-bg.png" mode="aspectFill"></image>
+  </view>
+
+</view>

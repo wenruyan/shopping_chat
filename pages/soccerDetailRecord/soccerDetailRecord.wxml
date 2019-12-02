@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{0}}" title="积分明细"></navbar> -->
+  <view class='no-record' wx:if="{{recordList.length == 0}}">
+    <view wx:if="{{!noData}}">
+      <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+      <view class='no-record-text'>正在加载</view>
+    </view>
+    <view wx:else>
+      <image class='no-record-img' src='../../images/no-money-record.png'></image>
+      <view class='no-record-text'>暂无记录</view>
+    </view>
+  </view>
+  <view class='record-list' wx:else>
+    <scroll-view scroll-y class='wrap' bindscrolltolower="getListData">
+      <view class='section'>
+        <view class='month-item' wx:for="{{recordList}}">
+          <view class='month'>
+            <!-- <image class='icon-date' src='../../images/icon-date.png'></image> -->
+            <view class='month-text'>
+              {{item.date}}
+            </view>
+          </view>
+          <view class='record-detail' wx:for="{{item.record}}" wx:for-index="idx" wx:for-item="detailItem">
+            <view class='left f-l'>
+              <view class='name' wx:if="{{detailItem.integralPoolDetail == 10}}">新用户赠送</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 20}}">抽奖获得</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 30}}">分享赠送</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 40}}">步数兑换</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 50}}">导入积分</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 60}}">商品兑换</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 70}}">每日签到</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 80}}">积分抽奖</view>
+              <view class='name' wx:elif="{{detailItem.integralPoolDetail == 90}}">分享赠送</view>
+              <view class='time'>{{detailItem.createDate}}</view>
+            </view>
+            <view class='right f-r'>
+              <view class='change-value {{detailItem.paymentType == 10 ? "change-add" : "change-reduce"}}'>{{detailItem.paymentType == 10 ? '+' : '-'}}{{detailItem.quota}}分</view>
+            </view>
+          </view>
+        </view>
+        <view class='loading-data' wx:if="{{list.page <= list.totalPage}}">正在加载中……</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

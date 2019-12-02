@@ -1,0 +1,10 @@
+{
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#3f73ff",
+  "usingComponents": {
+    "confirm-share": "../../components/confirmShare/confirmShare",
+    "navbar": "../../components/navbar/navbar",
+    "tabbar": "../../components/tabbar/tabbar"
+  }
+}

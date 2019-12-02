@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "积分兑换",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "login": "../../components/login/login",
+    "i-icon": "../../libs/iview/icon/index"
+  }
+}

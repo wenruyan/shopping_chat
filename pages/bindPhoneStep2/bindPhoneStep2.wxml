@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">输入验证码</view>
+  <view class="tips">验证码已发送至{{phone}}</view>
+  <view class='input-wrap'>
+    <input value="{{inputCodeValue}}" bindinput="bindCodeInput" placeholder="请输入验证码" type='number' maxlength='11'/>
+  </view>
+  <view class="resend gray" wx:if="{{time != 60}}">{{time}}S后重新发送</view>
+  <view class="resend" bindtap="resendCode" wx:else>重新获取验证码</view>
+</view>

@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container" >
+  <navbar font-color="{{'#333333'}}" bg-op="{{0}}" title="安全设置" can-back="{{true}}"></navbar>
+  <view class='menu' style="margin-top: {{marginTop}}rpx;">
+   <view class='menu-item input-wrap'>
+    
+      <view class='input-wrap'>
+        <input value="{{inputOldValue}}" bindinput="bindOldInput"  type='number' password='true'  maxlength="6" placeholder="请输入旧密码"/>
+      </view>
+    </view>
+    <view class='menu-item input-wrap'>
+    
+      <view class='input-wrap'>
+        <input value="{{inputNameValue}}" bindinput="bindNameInput"  type='number' password='true'  maxlength="6" placeholder="请输入新密码" />
+      </view>
+    </view>
+    <view class='menu-item input-wrap'>
+      <view class='input-wrap'>
+        
+        <input value="{{inputPhoneValue}}"  type='number' password='true'  maxlength="6" bindinput="bindPhoneInput" placeholder="请再次输入密码" />
+      </view>
+      
+       </view>
+      <view class='menu-item input-wrap'>
+       <view class="f-l">打开免密支付</view>
+       <view class="f-l radioOne "  bindtap="changeClass" >
+          <image src="../../images/pay.png" class="chexkAdress" wx:if="{{freePay}}" data-index='{{item.index}}'></image>
+           <image src="../../images/kongbai.png" class="chexkAdress" wx:else data-index='{{item.index}}'></image>
+       </view>
+    </view>  
+  </view>
+  <view class='btn-wrap'>
+    <button class="btn btn-save blue-blue" hover-class="btn-active" bindtap='submitInfo'>保存</button>
+  </view>
+</view>

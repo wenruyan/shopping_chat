@@ -1,0 +1,154 @@
+<!--index.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="提交订单"></navbar> -->
+  <view class="content-wrap" >
+    <view class="address-module" style="margin-top: {{marginTop}}rpx;" wx:if="{{notVirtual}}">
+      <view class="noAddress" wx:if="{{showAddress}}" bindtap="toPage" data-page="addressList" data-name="ordersubmit">
+        <i-icon class="f-l addicon" type="add" size="22" color="#999999"></i-icon>
+        <view class="add">添加地址</view>
+      </view>
+      <view class="info" wx:else bindtap="toPage" data-page="addressList">
+        <view class="person-info">
+       
+          <view class="f-l icon-wrap">
+            <image src="../../images/ren.png" class="icon2"></image>
+          </view>
+          <view class="name f-l">收件人 {{shouInfo.name}}</view>
+          <view class="phone f-r">{{shouInfo.phone}}</view>
+        </view>
+        <view class="address-info">
+          <view class="f-l icon-wrap">
+            <image src="../../images/dizhi.png" class="icon"></image>
+          </view>
+          <view class=" margin-l"> 收货地址 {{shouInfo.province}} {{shouInfo.city}} {{shouInfo.area}} {{shouInfo.addressdetail}}
+          </view>
+        </view>
+        <image class="rightLogo" src="../../images/icon-right-invite.png"></image>
+      </view>
+    </view>
+    <view class="commodity-module">
+      <view class="mall-name">攒积分商城</view>
+      <view class="commodity-info">
+        <image class="pic f-l" src="{{imgUrls}}" mode="aspectFit"></image>
+        <view class="desc-wrap f-r">
+          <view class="desc">{{ goodsDetail.mainTitle}}</view>
+          <view class="attr" wx:if="{{isMoreAttr}}">{{attrText}}</view>
+          <i-input-number i-class="selectNumber" value="{{ value1 }}" min="1" max="99999" bindchange="handleChange1" />
+        </view>
+      </view>
+      <view class="express" wx:if="{{notVirtual}}">
+        <view class="key f-l">配送方式</view>
+        <view class="value f-r">快递 {{mailFee == 0 ? '免邮' : mailFee / 100 + '元运费'}}</view>
+      </view>
+    </view>
+    <!-- <view class="pay-module">
+      <view class="title-wrap">
+        <view class="title f-l">付款方式</view>
+        <view class="noMailFee f-l">（以下价格不含邮费）</view>
+        <view class="mysoccer f-r">积分： {{integralBalance}}</view>
+      </view>
+      <view class="pay-type">
+        <view class="item f-l {{(nowActive==30)?'checked':''}}" bindtap="changeActive" data-active='30'>
+          <view class="name ">积分支付</view>
+          <view class="need-pay">{{jifen.integral}} 积分</view>
+          <image src="../../images/ok.png" class="okpay"  wx:if="{{nowActive==30}}"></image>
+        </view>
+        <view class="item f-l  {{(nowActive==10)?'checked':''}}" bindtap="changeActive" data-active='10'>
+          <view class="name">积分+现金支付</view>
+          <view class="need-pay">{{jifenMoney.integral}}积分+￥{{jifenMoney.amount}}</view>
+          <image wx:if="{{nowActive==10}}" src="../../images/ok.png" class="okpay"></image>
+        </view>
+        <view class="mortgageWrap"  wx:if="{{nowActive==10}}">
+          <view class="f-l mortgage margin-top">余额抵扣</view>
+          <view class="f-r radioOne  " bindtap="changeClass">
+            <image wx:if="{{activeClass}}" class="radioOne2" src="../../images/pay.png"></image>
+            <image wx:else  class="radioOne2" src="../../images/kongbai.png"></image>
+          </view>
+
+          <view class="f-r mortgageNum  margin-top"> 当前余额可抵押 ￥{{filter.numberToFix(deduction)}}</view>
+        </view>
+      </view>
+    </view> -->
+    <view class="soccer-account" >
+      <view class="title">
+        我的积分账户
+      </view>
+      <view class="content">
+        <view class="f-l">
+          剩余积分
+        </view>
+        <view class="f-r">
+          {{integralBalance}}积分
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom {{isIphoneX ? 'iphoneX-height' : ''}}">
+    <view class="total f-l">
+      <view class="key f-l">合计金额</view>
+      <view class="value f-l" wx:if="{{nowActive==30}}">{{(value1)*jifen.integral}}积分</view>
+      <!-- <view class="value f-l" wx:if="{{nowActive==30}}">{{(value1)*jifen.integral}}积分+￥{{(mailFee / 100)}}</view>
+      <view class="value f-l" wx:if="{{nowActive==10}}">{{value1*jifenMoney.integral}}积分+￥{{activeClass ? filter.numberToFix(value1*jifenMoney.amount + (mailFee / 100) - deduction) :filter.numberToFix (value1*jifenMoney.amount + (mailFee / 100))}}</view>-->
+    </view> 
+    <view class="buy f-l" bindtap='goPay'>
+      <view>提交订单</view>
+    </view>
+  </view>
+</view>
+
+<!-- 密码支付 -->
+
+<view class='confirm-tips' wx:if="{{payConfirm}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content'>提示您还没有设置支付密码，请先设置 密码
+    </view>
+    <button class="btn blue-blue" hover-class="btn-active" data-btn="sure" bindtap='sureSafeSet'>立即设置</button>
+
+  </view>
+  <view class='close'>
+    <image src='../../images/icon-close.png' bindtap='hideTipsConfirm' bindtap='closeMima'></image>
+  </view>
+</view>
+
+<!-- 输入密码 -->
+
+<view class='confirm-tips' wx:if="{{paySure}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>请输入密码</view>
+    <view class='text-content inputWrap'>
+       <view class='contents'> 
+          <block wx:for="{{Length}}" wx:key="item"> 
+            <input class='iptbox' value="{{Value.length>=index+1?Value[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input> 
+          </block> 
+        </view> 
+          <input name="password" password="{{true}}" type="number" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input> 
+        <view>     
+        </view> 
+      <view>
+      </view>
+    </view>
+    <button class="btn blue-blue" hover-class="btn-active" data-btn="sure" bindtap='surePay'>确认支付</button>
+
+  </view>
+  <view class='close'>
+    <image src='../../images/icon-close.png'  bindtap='closeShow'></image>
+  </view>
+</view>
+<!-- 步步抽积分不够 -->
+<view class='confirm-tips' wx:if="{{formGO}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content'>您当前的积分不足,请确认是否导入<text >步步抽</text>的积分,并完成支付
+    </view>
+    <button class="blue-blue btnn" hover-class="btn-active" data-btn="sure" bindtap='goExchange'>立即兑换</button>
+
+  </view>
+  <view class='close'>
+    <image src='../../images/icon-close.png' bindtap='hideTipsConfirm' bindtap='closeMima'></image>
+  </view>
+</view>

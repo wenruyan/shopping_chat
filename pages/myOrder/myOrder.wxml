@@ -1,0 +1,213 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="我的订单"></navbar> -->
+  <view class='select-bar'  style="margin-top: {{marginTop}}rpx;">
+    <view class='item {{activeSelect == 1 ? "active" : ""}}' data-type="1" data-tab="0" bindtap='changeSelect'>
+      全部
+      <view class='line'></view>
+    </view>
+    <view class='item  {{activeSelect == 2 ? "active" : ""}}' data-type="2" data-tab="20" bindtap='changeSelect2'>
+      未发货
+      <view class='line'></view>
+    </view>
+    <view class='item {{activeSelect == 3 ? "active" : ""}}' data-type="3" data-tab="30" bindtap='changeSelect3'>
+      已发货
+      <view class='line'></view>
+    </view>
+    <!-- <view class='item {{activeSelect == 3 ? "active" : ""}}' data-type="3" data-tab="30" bindtap='changeSelect'>
+      已退货
+      <view class='line'></view>
+    </view> -->
+    <view class='item  {{activeSelect == 4 ? "active" : ""}}' data-type="4" data-tab="50" bindtap='changeSelect5'>
+      已完成
+      <view class='line'></view>
+    </view>
+  </view>
+  <view class='scroll-wrap show'>
+    <view wx:if="{{activeSelect==1}}" class="scroll">
+      <scroll-view class='scroll' scroll-y bindscrolltolower="getOrderList">
+        <view class='no-record' wx:if="{{listData1.length == 0}}">
+          <view wx:if="{{!noData}}">
+            <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+            <view class='no-record-text'>正在加载</view>
+          </view>
+          <view wx:else>
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+        </view>
+        <view class='list' wx:else>
+          <view class='list-detail noneMessage' wx:if="{{listData1.length==0}}">
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+          <view class='list-detail' wx:for="{{listData1}}" bindtap='toorderDetail' data-goodsId="{{item.id}}">
+            <view class='left f-l'>
+              <image class="pic" mode="aspectFit" src="{{item.url}}"></image>
+            </view>
+            <view class='right f-r'>
+              <view class="name f-l">{{item.mainTitle}}</view>
+              <view class="status f-r" wx:if="{{item.orderStatus==20}}">未发货</view>
+              <!-- <view class="status f-r" wx:elif="{{item.orderStatus==10}}">未付款</view> -->
+              <view class="status f-r" wx:elif="{{item.orderStatus==30}}">已发货</view>
+              <view class="status f-r" wx:elif="{{item.orderStatus==40}}">已到货</view>
+              <view class="status f-r" wx:elif="{{item.orderStatus==50}}">交易完成</view>
+              <view class="status f-r" wx:else>交易关闭</view>
+              <!-- <view  class="return" wx:if="{{item.orderStatus==20}}" bindtap="showConfirm" data-index='{{item.id}}'>{{tuikuan?"已申请退款":"申请退款"}}</view> -->
+              <view class="pay-info">共{{item.quantity}}件商品 实付
+                <text>{{item.integral}}积分</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='loading-data' wx:if="{{list1.page < list1.totalPage}}">正在加载中……</view>
+      </scroll-view>
+    </view>
+    <view wx:if="{{activeSelect==2}}" class="scroll">
+      <scroll-view class='scroll' scroll-y bindscrolltolower="getOrderList2">
+        <view class='no-record' wx:if="{{listData2.length == 0}}">
+          <view wx:if="{{!noData2}}">
+            <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+            <view class='no-record-text'>正在加载</view>
+          </view>
+          <view wx:else>
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+        </view>
+        <view class='list' wx:else>
+          <view class='list-detail noneMessage' wx:if="{{listData2.length==0}}">
+
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+
+          </view>
+          <view class='list-detail' wx:for="{{listData2}}" wx:if="{{item.orderStatus==20}}" bindtap='toorderDetail' data-goodsId="{{item.id}}">
+            <view class='left f-l'>
+              <image class="pic" mode="aspectFit" src="{{item.url}}"></image>
+            </view>
+            <view class='right f-r'>
+              <view class="name f-l">{{item.mainTitle}}</view>
+              <view class="status f-r" wx:if="{{item.orderStatus==20}}">未发货</view>
+              <!-- <view class="status f-r" wx:elif="{{item.orderStatus==10}}">未付款</view> -->
+              <view class="status f-r" wx:elif="{{item.orderStatus==30}}">已发货</view>
+              <view class="status f-r" wx:elif="{{item.orderStatus==40}}">已到货</view>
+              <view class="status f-r" wx:elif="{{item.orderStatus==50}}">交易完成</view>
+              <view class="status f-r" wx:else>交易关闭</view>
+              <!-- <view  class="return" wx:if="{{item.orderStatus==20}}" bindtap="showConfirm" data-index='{{item.id}}'>{{tuikuan?"已申请退款":"申请退款"}}</view> -->
+              <view class="pay-info">共{{item.quantity}}件商品 实付
+                <text>{{item.integral}}积分</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='loading-data' wx:if="{{list1.page < list1.totalPage}}">正在加载中……</view>
+      </scroll-view>
+    </view>
+    <view wx:if="{{activeSelect==3}}" class="scroll">
+      <scroll-view class='scroll' scroll-y bindscrolltolower="getOrderList3">
+        <view class='no-record' wx:if="{{listData3.length == 0}}">
+          <view wx:if="{{!noData3}}">
+            <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+            <view class='no-record-text'>正在加载</view>
+          </view>
+          <view wx:else>
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+        </view>
+        <view class='list' wx:else>
+          <view class='list-detail noneMessage' wx:if="{{listData3.length==0}}">
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+          <view class='list-detail' wx:for="{{listData3}}" data-goodsId="{{item.id}}" wx:if="{{item.orderStatus==30 }}" bindtap='toorderDetail'>
+            <view class='left f-l'>
+              <image class="pic" mode="aspectFit" src="{{item.url}}"></image>
+            </view>
+            <view class='right f-r'>
+              <view class="name f-l">{{item.mainTitle}}</view>
+              <view class="status f-r" wx:if="{{item.orderStatus==20}}">未发货</view>
+              <!-- <view class="status f-r" wx:elif="{{item.orderStatus==10}}">未付款</view> -->
+              <view class="status f-r" wx:elif="{{item.orderStatus==30}}">已发货</view>
+              <view class="status f-r" wx:elif="{{item.orderStatus==40}}">已到货</view>
+              <view class="status f-r" wx:elif="{{item.orderStatus==50}}">交易完成</view>
+              <view class="status f-r" wx:else>交易关闭</view>
+              <view class="return" wx:if="{{item.orderStatus==20}}" bindtap="showConfirm" data-index='{{item.id}}'></view>
+              <view class="pay-info">共{{item.quantity}}件商品 实付
+                <text>{{item.integral}}积分</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='loading-data' wx:if="{{list1.page < list1.totalPage}}">正在加载中……</view>
+      </scroll-view>
+    </view>
+    <view wx:if="{{activeSelect==4}}" class="scroll">
+      <scroll-view class='scroll' scroll-y bindscrolltolower="getOrderList5">
+        <view class='no-record' wx:if="{{listData5.length == 0}}">
+          <view wx:if="{{!noData5}}">
+            <image class='no-record-rush' src='../../images/index-egg.gif'></image>
+            <view class='no-record-text'>正在加载</view>
+          </view>
+          <view wx:else>
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+        </view>
+        <view class='list' wx:else>
+          <view class='list-detail noneMessage' wx:if="{{listData5.length==0}}">
+            
+            <image class='no-record-img' src='../../images/no-money-record.png'></image>
+            <view class='no-record-text'>暂无记录</view>
+          </view>
+          <view class='list-detail' wx:for="{{listData5}}" wx:if="{{item.orderStatus==50}}" bindtap='toorderDetail' data-goodsId="{{item.id}}">
+            <view class='left f-l'>
+              <image class="pic" mode="aspectFill" src="{{item.url}}"></image>
+            </view>
+            <view class='right f-r'>
+              <view class="name f-l">{{item.mainTitle}}</view>
+
+              <view class="status f-r" wx:if="{{item.orderStatus==50}}">交易完成</view>
+
+              <view class="return" wx:if="{{item.orderStatus==20}}" bindtap="showConfirm" data-index='{{item.id}}'>申请退款</view>
+              <view class="pay-info">共{{item.quantity}}件商品 实付
+                <text>{{item.integral}}积分</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='loading-data' wx:if="{{list1.page < list1.totalPage}}">正在加载中……</view>
+      </scroll-view>
+    </view>
+
+  </view>
+</view>
+
+<view class='confirm-tips' wx:if="{{tipsConfirm}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content'>是否要提交退货申请？该操作不可 撤回请谨慎操作
+    </view>
+    <button class="btn blue-blue" hover-class="btn-active" data-btn="sure" bindtap='hideTipsConfirmT'>确认</button>
+
+  </view>
+  <view class='close'>
+    <image src='../../images/icon-close.png' bindtap='hideTipsConfirm'></image>
+  </view>
+</view>
+
+<view class='confirm-tips' wx:if="{{returnConfirm}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <view class='text-title'>提示</view>
+    <view class='text-content'>退货申请已提交，如有疑问请联系 客服
+    </view>
+    <button class="btn blue-blue" hover-class="btn-active" data-btn="sure" bindtap='hideTipsConfirmT' open-type="contact">联系客服</button>
+
+  </view>
+  <view class='close'>
+    <image src='../../images/icon-close.png' bindtap='hideTipsConfirm'></image>
+  </view>
+</view>

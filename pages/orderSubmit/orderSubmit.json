@@ -1,0 +1,10 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "提交订单",
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar",
+    "i-input-number": "../../libs/iview/input-number/index",
+    "i-icon": "../../libs/iview/icon/index"
+  }
+}

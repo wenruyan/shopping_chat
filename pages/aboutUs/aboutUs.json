@@ -1,0 +1,10 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "关于我们",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar",
+    "login": "../../components/login/login",
+    "i-icon": "../../libs/iview/icon/index"
+  }
+}

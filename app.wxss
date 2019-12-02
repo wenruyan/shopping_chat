@@ -1,0 +1,288 @@
+/**app.wxss**/
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.wrapImg {
+  position: absolute;
+  top: 0;
+}
+
+.navigtion {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 112rpx;
+  color: #fff;
+  text-align: center;
+  z-index: 999;
+}
+
+.navigtion-box {
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 16rpx;
+  left: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.navigtion-box .back-icon {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 50%;
+  left: 25rpx;
+}
+
+.navigtion .nav-back {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: -50%;
+  left: 0rpx;
+}
+
+.navigtion .nav-text {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  font-size: 32rpx;
+}
+
+.btn {
+  margin: 0 auto;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+
+font-family:PingFang-SC-Bold;
+
+color:rgba(255,255,255,1);
+  font-weight: bold;
+  position: relative;
+  width:402rpx;
+  height:100rpx;
+  background:rgba(65,137,255,1);
+  border-radius:10rpx;
+}
+button::after{ border: none; }
+
+.btn-active {
+  position: relative;
+}
+
+.btn-active::before {
+  content: '';
+  width: 750rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.2;
+}
+.btn-disabled {
+  border-color: rgb(255,203,180)!important;
+}
+.btn-disabled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.blue-blue {
+background:rgba(65,137,255,1);
+  color: #fff;
+}
+
+.org-org {
+  background:linear-gradient(27deg,rgba(255,43,68,0.98),rgba(255,113,75,0.98));
+}
+
+.f-l {
+  float: left;
+}
+
+.f-r {
+  float: right;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.no-record {
+  text-align: center;
+  height: 100%;
+}
+
+.no-record .no-record-img {
+  width: 414rpx;
+  height: 298rpx;
+  margin: 0 auto 80rpx;
+  padding-top: 185rpx;
+}
+.no-record .no-record-rush {
+  width: 248rpx;
+  height: 324rpx;
+  margin: 0 auto 80rpx;
+  padding-top: 185rpx;
+}
+.no-record .no-record-text {
+  font-weight: bold;
+  font-size: 34rpx;
+  color: #666;
+}
+
+.no-record .btn {
+  font-size: 36rpx;
+  color: #fff;
+  margin-top: 37rpx;
+  width: 333rpx;
+}
+.loading-data {
+  text-align:center;
+  font-size:30rpx;
+  color:#ccc;
+  padding-bottom:20rpx;
+}
+
+.confirm-info {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  text-align: center;
+}
+.confirm-info .bg {
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: -1;
+}
+.confirm-info .content {
+  width: 580rpx;
+  height: 531rpx;
+  background-color: #FFFFFF;
+  border-radius: 25rpx;
+  margin: 316rpx auto 128rpx;
+  position: relative;
+  color: #333333;
+  text-align: center;
+}
+.confirm-info .content .text-title {
+  font-size: 46rpx;
+  padding-top: 66rpx;
+  line-height: 1;
+  font-weight: bold;
+}
+.confirm-info .content .text-content {
+  font-size: 28rpx;
+  padding: 60rpx 50rpx 0;
+}
+.confirm-info .content .text-content .input-wrap {
+  /* height: 30rpx; */
+  overflow: hidden;
+  padding: 10rpx 0;
+}
+.confirm-info .content .text-content .label-input {
+  font-weight: bold;
+  width: 120rpx;
+  text-align: left;
+  float: left;
+  display: block;
+  height: 1.4rem;
+  line-height: 1.4rem;
+}
+.confirm-info .content .text-content input {
+  width: 310rpx;
+  text-align: left;
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+}
+.confirm-info .content .btn {
+  width: 378rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #FFFFFF;
+  background: -webkit-linear-gradient(left, #FF654C, #FF7F44);
+  background: linear-gradient(left, #FF654C, #FF7F44);
+  font-size: 36rpx;
+  box-shadow: 0 0 5rpx #FF7F44;
+  margin-top: 60rpx;
+}
+.confirm-info .close image{
+  width: 62rpx;
+  height: 62rpx;
+}
+
+.change-reduce {
+  color: #0D80FF;
+}
+
+.myCanvas {
+  width: 375px;
+  height: 667px;
+  /* visibility: hidden; */
+  /* display: none; */
+  position: absolute;
+  top: 100%;
+}

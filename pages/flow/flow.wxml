@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+  <navbar font-color="{{'#333333'}}" bg-op="{{0}}" title="流量余额"></navbar>
+  <view class="balance-detail" bindtap="goDetail">剩余流量 <image class="" src="../../images/icon-right-invite.png"></image></view>
+  <view class="balance" hover-class="none" hover-stop-propagation="false">
+    {{balance}}M
+  </view>
+  <view class="line"></view>
+  <view class='input-wrap'>
+    <text class="label-input">提取到</text>
+    <input value="{{inputPhoneValue}}" bindinput="bindPhoneInput" placeholder="请输入手机号码" type='number' maxlength='11'/>
+  </view>
+  <view class="select-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="f-l select-item {{item.checked ? 'checked' : ''}}" data-idx="{{index}}" data-value="{{item.value}}" wx:for="{{flowSelectList}}" bindtap="selectFlow">
+      {{item.value}}M
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <button class="btn btn-widthdraw blue-blue {{canRecharge ? '' : 'btn-disabled'}}" hover-class="btn-active" bindtap='submit'>去充值</button>
+    <!-- <button class="btn btn-go btn-disabled" hover-class="btn-active" bindtap="goShop">去积分商城逛逛</button> -->
+  </view>
+  <view class="tips" hover-class="none" hover-stop-propagation="false">
+    *一天之内最多可提取400M,
+  </view>
+  <view class="tips" hover-class="none" hover-stop-propagation="false">
+    每月最多可提取1000M,提取的流量当月有效。
+  </view>
+  <view class='confirm-tips' wx:if="{{tipsConfirm}}" catchtouchmove="stopMove">
+    <view class='bg'></view>
+    <view class='content'>
+      <view class='text-title'>{{tipsConf.title}}</view>
+      <view class='text-content' wx:for="{{tipsConf.content}}">{{item}}</view>
+      <button class='btn blue-blue' hover-class="btn-active" bindtap='closeTipsConfirm' wx:if="{{tipsConf.btnName != ''}}">{{tipsConf.btnName}}</button>
+    </view>
+    <view class='close'>
+      <image src='../../images/icon-close.png' bindtap='closeTipsConfirm'></image>
+    </view>
+  </view>
+</view>

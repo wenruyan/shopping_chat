@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{0}}" title="收货地址"></navbar> -->
+  <view class='menu' style="margin-top: {{marginTop}}rpx;">
+    <view class='menu-item input-wrap'>
+      <view class='input-wrap'>
+        <!-- <text class="label-input">姓名</text> -->
+        <input value="{{inputNameValue}}" bindinput="bindNameInput" placeholder="请输入姓名" type='text'/>
+      </view>
+    </view>
+    <view class='menu-item input-wrap'>
+      <view class='input-wrap'>
+        <!-- <text class="label-input">电话</text> -->
+        <input value="{{inputPhoneValue}}" bindinput="bindPhoneInput" placeholder="请输入手机号码" type='number' maxlength='11'/>
+      </view>
+    </view>
+    <view class='menu-item input-wrap'>
+      <view class='input-wrap'>
+        <!-- <text class="label-input">省市区</text> -->
+        <picker class='picker' mode="region" bindchange="bindRegionChange" value="{{region}}"><text class="picker">{{region[0] ? region[0] + ' ' + region[1] + ' ' + region[2] : '请选择省市区'}}</text></picker>
+      </view>
+    </view>
+    <view class='menu-item input-wrap'>
+      <view class='input-wrap'>
+        <!-- <text class="label-input">详细地址</text> -->
+        <input value="{{inputAddressValue}}" bindinput="bindAddressInput" placeholder="请输入详细地址" type='text'/>
+      </view>
+    </view>
+    <view class='menu-item input-wrap'>
+      <view class='input-wrap'>
+        <text class="label-input default-text">设为默认地址</text>
+        <switch class="f-r switch" checked="{{setDefault}}" bindchange="switch1Change" color="#4189FF"/>
+      </view>
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <button class="btn btn-save blue-blue f-r" hover-class="btn-active" bindtap='submitInfo'>保存</button>
+     <button class="btn  btn-delate f-l" hover-class="btn-active" bindtap='delateAddress'>删除</button>
+  </view>
+</view>

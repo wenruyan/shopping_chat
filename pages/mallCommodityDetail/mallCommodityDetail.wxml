@@ -1,0 +1,128 @@
+<!--index.wxml-->
+<login bindcancel="cancelLogin" bindconfirm="getUserInfoSuccess" show-login="{{showLoginPanel}}"></login>
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="商品详情"></navbar> -->
+  <scroll-view class="content-wrap" scroll-y="{{true}}">
+    <view class="picture-swiper" style="margin-top: {{marginTop}}rpx;">
+      <swiper duration="{{duration}}" bindchange="swiperChange">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item.url}}" mode="aspectFit" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="swiper-dot">{{currentIndex + 1}}/{{imgUrls.length}}</view>
+      <!-- <view class="swiper-dot">{{currentIndex + 1}}/{{imgUrls.length}}</view> -->
+    </view>
+    <view class="commodity-name">
+      <view class="pay-type">积分付款</view>
+      <view class="name">{{goodsDetail.mainTitle}}</view>
+    </view>
+    <view class="pay-wrap">
+      <!-- <view class="soccer-money">
+
+        <view class="pay-type2 f-l">积分+现金</view>
+        <view class="now f-l">{{jifenMoney.integral}}积分+￥{{jifenMoney.amount}}</view>
+        <view class="old f-r">￥{{jifenMoney.realprice}}</view>
+      </view> -->
+      <view class="soccer-money">
+        <view class="pay-type2 f-l">积分支付</view>
+        <view class="now f-l">{{choosedSku.priceList ? choosedSku.priceList[0].integral : jifenRange}}积分</view>
+      </view>
+    </view>
+    <view class="otherInfo">
+      <view class="f-l">运费 0.00</view>
+      <view class="f-r">{{goodsDetail.count || 0}}人付款</view>
+    </view>
+    <view class="select-attr" bindtap="showPanel" wx:if="{{isMoreAttr}}">
+      <view class="f-l">选择<text>{{choosedAttrText.length > 0 ? choosedAttrText2 : '规格'}}</text></view>
+      <view class="f-r">
+        <image src="{{'../../images/icon-right-list.png'}}" class="right-icon"></image>
+      </view>
+    </view>
+    <!-- <view class='select-bar'>
+      <view class='item {{activeSelect == 1 ? "active" : ""}}' data-type="1" bindtap='changeSelect'>
+        图文详情
+        <view class='line'></view>
+      </view>
+      <view class='item  {{activeSelect == 2 ? "active" : ""}}' data-type="2" bindtap='changeSelect'>
+        兑换须知
+        <view class='line'></view>
+      </view>
+    </view> -->
+    <view class='goods-title'>
+        商品详情
+    </view>
+    <view class='scroll-wrap '>
+      <view class="scroll {{isIphoneX ? 'iphoneX-height' : ''}}" wx:if="{{activeSelect == 1}}">
+        <view class="detail-pic" wx:for="{{imgUrlss}}">
+          <image class="pic" mode="widthFix" src="{{item.url}}" wx:if="{{item.type==20}}"></image>
+          <view class="" wx:else>{{item.text}}</view>
+        </view>
+      </view>
+      <view class='scroll' wx:if="{{activeSelect == 2}}">
+        <view class="needKonw">1：划线价格可能是商品的专柜价、吊牌价、正品零售价、指导价、曾经展示过的销售价等，仅供您参考。</view>
+        <view class="needKonw">2：暂时不支持退换货。</view>
+        <view class="needKonw">3：拍下商品，我们将尽早为您发货，暂不提供物流信息，可联系客服为您提供物流单号自行查询。</view>
+        <view class="needKonw">4：根据相关规定，收货联系人请填写真实姓名。</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bottom {{isIphoneX ? 'iphoneX-height' : ''}}">
+    <button class="share f-l" open-type="share">
+      <i-icon class="iconP icon" type="share_fill" size="22" color="#999999"></i-icon>
+      <text class="shareBtn">分享</text>
+    </button>
+    <button class="contact f-l" open-type="contact">
+      <i-icon class="iconp icon" type="customerservice_fill" size="22" color="#999999"></i-icon>
+      <text class="shareBtn">客服</text>
+    </button>
+    <button class="collection f-l" bindtap="collectionSure" wx:if="{{collection}}">
+      <i-icon class="iconpp icon" type="collection_fill" size="22" color="#FF2B44"></i-icon>
+      <text class="shareBtn">收藏</text>
+    </button>
+    <button class="collection f-l" bindtap="collectionSure2" wx:else>
+      <i-icon class="iconpp icon" type="collection" size="22" color="#999999"></i-icon>
+      <text class="shareBtn">收藏</text>
+    </button>
+    <view class="buy f-r" bindtap="showPanel" wx:if="{{isMoreAttr}}">
+      <view class="">
+        立即购买
+      </view>
+    </view>
+    <view class="buy f-r" wx:else bindtap="submit2">
+      <view class="">
+        立即购买
+      </view>
+    </view>
+  </view>
+  <view class="spec-panel" wx:if="{{panelVisible}}">
+    <view class="commodity">
+      <image src="{{choosedSku.skuimage || imgUrls[0].url}}" alt=""></image>
+      <view>
+        <view class="name">{{goodsDetail.mainTitle}}</view>
+        <view class="bottom-info flex flex-main-justify flex-cross-top">
+          <view class="price flex flex-cross-center">
+            <image src="../../images/jifenicon.png" alt=""></image>
+            <text>{{choosedSku.priceList ? choosedSku.priceList[0].integral : jifenRange}}</text>
+            <text>积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="info-wrap">
+      <view class="spec-item" wx:for="{{skuData}}" wx:for-item="item" wx:for-index="index">
+        <view class="title">{{item && item.name}}</view>
+        <view class="attr">
+          <view class="attr-item {{item2.choosed ?'choosed':'' }}" wx:for="{{item.children}}" wx:for-item="item2" wx:for-index="index2" data-index="{{index}}" data-index2="{{index2}}"bindtap="chooseAttr" hidden="{{!item2.hasStock}}">{{item2.name}}</view>
+        </view>
+      </view>
+      <view class="number flex flex-main-justify flex-cross-center">
+        <view>数量</view>
+        <i-input-number i-class="selectNumber" value="{{ buyCount }}" min="1" max="100" bindchange="handleChange1" />
+      </view>
+    </view>
+    <view class="btn" bindtap="submit2">立即购买</view>
+  </view>
+  <view class="bg" wx:if="{{panelVisible}}"  bindtap="hidePanel"></view>
+</view>

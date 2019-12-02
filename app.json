@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/soccerDetailRecord/soccerDetailRecord",
+    "pages/cashBalance/cashBalance",
+    "pages/accountBalance/accountBalance",
+    "pages/balanceDetailRecord/balanceDetailRecord",
+    "pages/safeSet/safeSet",
+    "pages/address/address",
+    "pages/sort/sort",
+    "pages/orderDetail/orderDetail",
+    "pages/addressList/addressList",
+    "pages/expressInfo/expressInfo",
+    "pages/mine/mine",
+    "pages/mallCommodityDetail/mallCommodityDetail",
+    "pages/myOrder/myOrder",
+    "pages/orderSubmit/orderSubmit",
+    "pages/flow/flow",
+    "pages/flowDetailRecord/flowDetailRecord",
+    "pages/newSafe/newSafe",
+    "pages/myCollection/myCollection",
+    "pages/searchPage/srearchPage",
+    "pages/Redeem/Redeem",
+    "pages/aboutUs/aboutUs",
+    "pages/myCard/myCard",
+    "pages/cardDetail/cardDetail",
+    "pages/bindPhoneStep1/bindPhoneStep1",
+    "pages/bindPhoneStep2/bindPhoneStep2",
+    "components/confirmShare/confirmShare"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#FF654C",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/tabbar/index.png",
+        "selectedIconPath": "./images/tabbar/index-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/tabbar/my.png",
+        "selectedIconPath": "./images/tabbar/my-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wx0b7e21fbe3b3c09a"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

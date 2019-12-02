@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="可用积分"></navbar> -->
+  <view class="balance-detail" bindtap="goDetail">积分明细<image class="" src="../../images/icon-right-invite.png"></image></view>
+  <view class="balance" hover-class="none" hover-stop-propagation="false">
+    {{balance}}分
+  </view>
+  <view class='btn-wrap'>
+    <!-- <button class="btn btn-widthdraw blue-blue {{canWidthdraw ? '' : 'btn-disabled'}}" hover-class="btn-active" bindtap='submit'>提现到微信钱包</button> -->
+    <button class="btn btn-go  blue-blue " hover-class="btn-active" bindtap="goShop">去积分商城逛逛</button>
+  </view>
+  <!-- <view class="tips" hover-class="none" hover-stop-propagation="false">
+    *账户满10元可提现
+  </view> -->
+
+</view>

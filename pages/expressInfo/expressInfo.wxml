@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <navbar font-color="{{'#333333'}}" bg-op="{{1}}" title="我的订单"></navbar>
+  <view class="content">
+    <view class="overview">
+      <image class="f-l main-pic" src="../../images/test.png" mode="aspectFit">
+      </image>
+      <view class="info f-l">
+        <view class="status">物流状态： <text>{{'派送中'}}</text></view>
+        <view>物流公司： <text>{{'圆通快递'}}</text></view>
+        <view>物流单号： <text>{{'12321321312312'}}</text></view>
+      </view>
+    </view>
+    <view class="map">
+      <image src="../../images/map.png"></image>
+      <view class="from">北京</view>
+      <view class="to">黑龙江</view>
+    </view>
+    <view class="detail">
+      <view class="item">
+        <view class="time-wrap f-l">
+          <view class="time">12:00</view>
+          <view class="date">2018-09-09</view>
+        </view>
+        <view class="icon f-l"><image class="" src="../../images/express-person.png"></image></view>
+        <view class="message f-l">
+          <view>上海市邮政速递物流股份公司北京市国货航空部已发出</view>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <view class="item">
+        <view class="time-wrap f-l">
+          <view class="time">12:00</view>
+          <view class="date">2018-09-09</view>
+        </view>
+        <view class="icon f-l"><image class="" src="../../images/express-person.png"></image></view>
+        <view class="message f-l">
+          <view>上海市邮政速递物流股份公司北京市国货航空部已发出</view>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </view>
+  </view>
+</view>

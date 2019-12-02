@@ -1,0 +1,71 @@
+/**index.wxss**/
+.container {
+  background-color: #ffffff;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  padding-top: 128rpx;
+  padding-bottom: 98rpx;
+  text-align: center;
+}
+.balance-detail {
+  font-size: 30rpx;
+  color: #666666;
+  padding-top: 112rpx;
+}
+.balance-detail image{
+  width: 12px;
+  height: 20rpx;
+}
+.balance {
+  font-size: 90rpx;
+  color: #333333;
+  margin-top: 30rpx;
+  font-weight: bold;
+}
+.btn-wrap {
+  margin-top: 180rpx;
+  margin-bottom: 30rpx;
+}
+.btn-go {
+  margin-top: 20rpx;
+  border: 2rpx solid #FF3327;
+  
+}
+.tips {
+  font-size: 24rpx;
+  color: #999999;
+}
+.confirm-tips .content {
+  width: 580rpx;
+  padding-bottom: 74rpx; 
+  background-color: #FFFFFF;
+  border-radius: 25rpx;
+  margin: 316rpx auto 125rpx;
+  position: relative;
+  color: #333333;
+  text-align: center;
+}
+.confirm-tips .content .text-title {
+  font-size: 46rpx;
+  padding: 66rpx 0 50rpx;
+  line-height: 1;
+  font-weight: bold;
+}
+.confirm-tips .content .text-content {
+  font-size: 30rpx;
+  padding: 0 38rpx;
+  line-height: 1.8;
+  text-align: left;
+  white-space:normal;
+  word-break:break-all;
+}
+.confirm-tips .content .btn {
+  width: 378rpx;
+  margin-top: 65rpx;
+}
+.confirm-tips .close image{
+  width: 62rpx;
+  height: 62rpx;
+}

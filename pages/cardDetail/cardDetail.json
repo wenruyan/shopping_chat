@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#4189FF",
+
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "详情",
+  "backgroundColor": "#4189FF",
+  "backgroundColorTop": "#4189FF",
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar"
+  }
+}

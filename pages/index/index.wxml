@@ -1,0 +1,151 @@
+<!--index.wxml-->
+<login bindcancel="cancelLogin" bindconfirm="getUserInfoSuccess" show-login="{{showLoginPanel}}"></login>
+<!-- 
+<navbar can-back="{{false}}" font-color="{{'#333333'}}" bg-op="{{1}}" title="商城" border="{{false}}"></navbar> -->
+<view class="container {{isPhone ? 'iphoneX-height' : ''}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+
+  <view class='wrap' style="margin-top: {{marginTop}}rpx;">
+    <view class="banner">
+      <image class="bg" src="../../images/index-top-bg.png"></image>
+      <view class="soccer f-l" bindtap="goSoccerPage">
+        <view class="interD">当前积分
+          <image src='../../images/right.png' class="f-r righticon"></image>
+        </view>
+        <view class="integral">{{integralBalance||0}}</view>
+      </view>
+      <view class="input-wrap f-r" id="selectId">
+        <i-icon class="f-l search-icon" type="search" size="22" color="#3B6EFF"></i-icon>
+        <input class="f-l" placeholder-class="phcolor" type="text" disabled placeholder="{{placeholder}}" bindtap='toSearch'></input>
+      </view>
+
+    </view>
+
+
+    <!-- <view class="sort" wx:if="{{false}}">
+      <view class="sort-item f-l" wx:for="{{sortList}}" bindtap='toPage' data-name="{{item.name}}" >
+        <image src="{{item.picUrl}}"></image>
+        <view>{{item.name}}</view>
+      </view>
+    </view> -->
+    <view class="recommend">
+      <view class="contentW" bindtap='toSousuo'>
+        <image src='../../images/duihuan.png' class="content_one"></image>
+        <view class="imgDesc">积分兑换</view>
+      </view>
+      <view class="contentW" bindtap='signIn' wx:if="{{sign==0}}">
+        <image src='../../images/index_qiandao.png' class="content_one"></image>
+        <view class="imgDesc">积分签到</view>
+      </view>
+      <view class="contentW" bindtap='signIn' wx:else>
+        <image src='../../images/index_qiandao.png' class="content_one"></image>
+        <view class="imgDesc">已签到</view>
+      </view>
+      <view class="contentW" bindtap='toSort'>
+        <image src='../../images/sort-all.png' class="content_one"></image>
+        <view class="imgDesc">全部商品</view>
+      </view>
+    </view>
+    <view class='recommend2' wx:if="{{newGoodsList.length > 0}}">
+      <image class="icon-left f-l" src="../../images/diamond2.png"></image>
+      <view class="text f-l">新人福利</view>
+    </view>
+    <view style="padding:0 20rpx;width: 100%;box-sizing: border-box;">
+      <scroll-view scroll-x class="imgWrap contentTwo">
+        <view class="scroll-x" wx:for="{{newGoodsList}}" bindtap="godetail" data-id="{{item.id}}">
+          <image src="{{item.url}}" class="infoimg"></image>
+          <image class="titleImg" src="../../images/new.png"></image>
+          <view class="describe3">
+            <text class="newLi">新人礼</text>{{item.itemtitle}}</view>
+          <!-- <view class="describe3">
+            平台免费送 </view> -->
+          <view class="describe3">
+            <image src='../../images/jifenicon.png' class="iconjifen f-l"></image>
+            <text class="buyjifen f-l">{{item.promoitempointsonly}} <text class="miaoshu">积分 </text></text>
+          </view>
+        </view>
+
+      </scroll-view>
+    </view>
+    <view class='recommend2' wx:if="{{xsGoodsList.length > 0}}">
+      <image class="icon-left f-l" src="../../images/diamond2.png"></image>
+      <view class="text f-l">限时换购</view>
+
+      <text wx:if="{{endTimeDesc.day!='00'}}" class="time f-l">{{endTimeDesc.day}}</text>
+      <text wx:if="{{endTimeDesc.day!='00'}}" class="timepoint f-l"> : </text>
+      <text class="time f-l">{{endTimeDesc.hour}}</text>
+      <text class="timepoint f-l"> : </text>
+      <text class="time f-l">{{endTimeDesc.minute}}</text>
+      <text class="timepoint f-l"> : </text>
+      <text class="time f-l">{{endTimeDesc.second}}</text>
+      <text class="timepoint f-l"></text>
+
+    </view>
+    <view style="padding:0 20rpx">
+      <scroll-view scroll-x class="imgWrap contentTwo timeBuy">
+        <view class="scroll-x" wx:for="{{xsGoodsList}}" data-id="{{item.id}}" bindtap="godetail">
+          <image src="{{item.url}}" class="infoimg"></image>
+          <image class="titleImg" src="../../images/limit.png"></image>
+          <view class="describe3">
+            {{item.itemtitle}} </view>
+          <view class="describe3">
+            <image src='../../images/jifenicon.png' class="iconjifen"></image>
+            <text class="buyjifen">{{item.promoitempointsonly}} 积分 </text>
+            <view class='cancleS'>{{item.promoitempoints}}积分</view>
+          </view>
+        </view>
+
+
+      </scroll-view>
+    </view>
+    <view class='recommend2'>
+      <image class="icon-left f-l" src="../../images/diamond2.png"></image>
+      <view class="text f-l">热门商品</view>
+      <view class="textbtn f-r" bindtap='toSort'>全部商品</view>
+    </view>
+    <commodity-list binddraw="goMallCommodityDetail" listData="{{listData}}"></commodity-list>
+  </view>
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+  <view class="guide" catchtouchmove="stopMove" wx:if="{{showGuide}}">
+    <image class="guide-4 {{isPhone ? 'iphoneX-height' : ''}}" src="../../images/guide/guide-4.png" bindtap="closeGuide"></image>
+    <image class="guide-5 {{isPhone ? 'iphoneX-height' : ''}}" src="../../images/guide/guide-5.png" bindtap="closeGuide"></image>
+  </view>
+</view>
+
+<view class='confirm-tips' wx:if="{{returnConfirm}}" catchtouchmove="stopMove">
+  <view class='bg' bindtap='canclebg'></view>
+  <view class='content'>
+
+    <image class="success_one" src='../../images/success_one.png'></image>
+    <image class="success_two" src='../../images/success_two.png'></image>
+  </view>
+
+</view>
+<view class="fixedImg" bindtap='backTop' id="backTop" wx:if='{{topTopScroll}}'>
+  <image class="totop" src="../../images/totop.png"></image>
+</view>
+<!-- <view class="{{sureSho?'flex_banner':'noShow'}}">
+  <view class="flex_input">
+    <i-icon class="f-l" type="search" size="22" color="#3B6EFF"></i-icon>
+    <input class="f-l" type="text" placeholder="{{placeholder}}" value="{{inputVal}}" bindinput="inputTyping" bindconfirm="search"></input>
+  </view>
+</view> -->
+<view class='confirm-tips' wx:if="{{returnConfirm2}}" catchtouchmove="stopMove">
+  <view class='bg'></view>
+  <view class='content'>
+    <image src="../../images/icon-close.png" class="closeIcon" bindtap='canclebg'></image>
+    <image class="addf" src='../../images/addf.png'></image>
+    <text class="addjf">积分</text>
+    <view class="goEnjoy">继续分享今日最高可获15积分</view>
+    <image class="enjoybg" src='../../images/enjoybg.png'></image>
+    <image class="success_two" src='../../images/success_two.png'></image>
+  </view>
+
+</view>
+<view class="topFixed" wx:if="{{showTopInput}}">
+  <view class="input-wrap2" id="selectId">
+    <i-icon class="f-l" type="search" size="22" color="#999999" style="margin-top:-38rpx"></i-icon>
+    <!-- <input class="f-l" type="text" disabled  placeholder="{{placeholder}}" value="{{inputVal}}" bindinput="inputTyping" bindconfirm="search"></input> -->
+    <input class="f-l" placeholder-class="phcolor2" type="text" disabled placeholder="{{placeholder}}" bindtap='toSearch'></input>
+  </view>
+
+</view>

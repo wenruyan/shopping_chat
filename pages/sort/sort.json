@@ -1,0 +1,12 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "商城",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "navbar": "../../components/navbar/navbar",
+    "login": "../../components/login/login",
+    "tabbar": "../../components/tabbar/tabbar",
+    "i-icon": "../../libs/iview/icon/index",
+    "commodity-list": "../../components/commodityList/commodityList"
+  }
+}

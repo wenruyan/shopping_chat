@@ -1,0 +1,127 @@
+/**index.wxss**/
+
+.container {
+  background-color: #4189FF;
+  height: 100%;
+  /* overflow-y: hidden; */
+  z-index: 1;
+  box-sizing: border-box;
+  /* padding-top: 128rpx; */
+  padding: 48rpx 40rpx 40rpx;
+}
+
+.info {
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.info:before, .info:after {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  background-color: #4189FF;
+  position: absolute;
+  left: -10rpx;
+  top: 148rpx;
+}
+
+.info:after {
+  left: auto;
+  right: -10rpx;
+}
+
+.info .title {
+  height: 158rpx;
+  line-height: 158rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.info .title:after {
+  content: '';
+  width: 616rpx;
+  height: 2rpx;
+  transform: scaleY(0.5);
+  background-color: #E6E6E6;
+  position: absolute;
+  bottom: 0;
+  left: 27rpx;
+}
+
+.info .title image {
+  width: 51rpx;
+  height: 42rpx;
+  margin-left: 50rpx;
+  margin-right: 40rpx;
+}
+
+.info .title view {
+  color: #333333;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.info .body {
+  text-align: center;
+}
+
+.info .body .tip {
+  margin-top: 83rpx;
+  margin-bottom: 46rpx;
+  line-height: 1;
+  font-size: 42rpx;
+  color: #999999;
+}
+
+.info .body .code {
+  color: #4189FF;
+  font-size: 40rpx;
+  line-height: 1;
+}
+
+.info .body .copy {
+  color: #666666;
+  font-size: 22rpx;
+  width: 87rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  margin: 50rpx auto 83rpx;
+  background-color: #EBEBEB;
+}
+
+.info .foot {
+  font-size: 24rpx;
+  line-height: 1;
+  padding: 30rpx 30rpx 48rpx;
+  position: relative;
+  color: #999999;
+}
+
+.info .foot:before {
+  content: '';
+  width: 616rpx;
+  height: 2rpx;
+  transform: scaleY(0.5);
+  background-color: #E6E6E6;
+  position: absolute;
+  top: 0;
+  left: 27rpx;
+}
+
+.info .foot .date {
+  margin-left: 45rpx;
+  color: #333333;
+}
+
+.detail {
+  padding: 38rpx 24rpx 45rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  margin-top: 26rpx;
+}
+.detail .detail-item, .detail .detail-item .pic {
+  width: 100%;
+}
